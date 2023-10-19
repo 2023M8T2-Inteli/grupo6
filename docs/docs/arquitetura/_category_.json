@@ -2,7 +2,7 @@
     "label": "Arquitetura",
     "position": 2,
     "link": {
-      "type": "arquitetura",
+      "type": "generated-index",
       "description": "Arquitetura do projeto"
     }
   }

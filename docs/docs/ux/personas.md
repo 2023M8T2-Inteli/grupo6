@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+slug: '/ux/personas'
+---
+
 **Persona 1: João, o Técnico de Manutenção**
 
 - **Grupo demográfico:** 

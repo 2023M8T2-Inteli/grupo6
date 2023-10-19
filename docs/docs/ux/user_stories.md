@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+slug: '/ux/user_stories'
+---
+
 # User Stories
 As histórias de usuário refletem as dores, necessidades, desejos e preferências de cada stakeholder, proporcionando uma base sólida para o desenvolvimento de soluções que atendam às suas requisições.
 
