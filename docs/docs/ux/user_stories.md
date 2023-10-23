@@ -12,7 +12,7 @@ As histórias de usuário refletem as dores, necessidades, desejos e preferênci
 
 - Eu, como Técnico de Manutenção, quero a capacidade de dar feedback sobre o sistema para sugerir melhorias, tornando-o mais eficiente.
 
-- Eu, como Técnico de Manutenção, necessito de suporte técnico rápido e eficiente diretamente no aplicativo para resolver problemas imediatamente.
+- Eu, como Técnico de Manutenção, necessito de suporte técnico rápido e eficiente diretamente do robô para resolver problemas imediatamente.
 
 ### Almoxarife
 
