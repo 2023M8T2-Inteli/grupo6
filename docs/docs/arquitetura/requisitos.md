@@ -5,7 +5,7 @@ slug: '/requisitos'
 
 # Requisitos funcionais e não funcionais
 
-<div style={{display: 'flex'}}>
+<div style={{display: 'flex', gap:'50px', paddingLeft:'30px' }}>
 
 | N° | Requisito Funcional |
 |--------|-----------|
