@@ -11,9 +11,9 @@ slug: '/ux/personas'
   - **Perfil socioeconômico:** Classe média, mora em um bairro residencial próximo à cervejaria.
 
 - **Dores (🔴 Alta Gravidade, 🔶 Média Gravidade, 🔵 Baixa Gravidade):**
-  - 🔴 Dificuldade em localizar peças menos comuns no almoxarifado.
+  - 🔶 Dificuldade em localizar peças menos comuns no almoxarifado.
   - 🔶 Perda de tempo procurando itens.
-  - 🔵 Necessidade de interromper o trabalho para buscar peças.
+  - 🔴 Necessidade de interromper o trabalho para buscar peças.
 
 - **Necessidades:**
   - 🔴 Encontrar rapidamente as peças que precisa.
@@ -21,12 +21,12 @@ slug: '/ux/personas'
   - 🔵 Ter um sistema que o guie de forma eficiente.
 
 - **Desejos:**
-  - 🔴 Ter acesso a um mapa digital atualizado do almoxarifado.
-  - 🔶 Receber notificações sobre a disponibilidade de peças.
+  - 🔶 Não precisar procurar pelos itens no almoxarifado.
+  - 🔵 Ter ciência sobre a disponibilidade de peças.
   - 🔵 Ter um assistente virtual para consultas rápidas.
 
 - **Preferências:**
-  - 🔴 Interface amigável e intuitiva.
+  - 🔴 Um sistema de fácil manuseio e intuitivo.
   - 🔶 Suporte técnico rápido e eficiente.
   - 🔵 Capacidade de feedback para melhorias no sistema.
 
@@ -35,7 +35,7 @@ slug: '/ux/personas'
   - **Ambientes digitais:** Sistema de gerenciamento do almoxarifado, aplicativo móvel de assistência.
 
 - **Interesses e hábitos:** 
-  - João valoriza soluções tecnológicas que otimizem seu tempo e esforço. Ele frequentemente busca por ferramentas e aplicativos que possam auxiliá-lo em suas tarefas diárias.
+  - João valoriza soluções tecnológicas que otimizem seu tempo e esforço. Ele frequentemente busca por ferramentas que possam auxiliá-lo em suas tarefas diárias.
 
 - **Capacidades e habilidades:** 
   - Letramento digital médio. João é familiarizado com tecnologias básicas e aplicativos móveis, mas pode ter dificuldades com sistemas mais complexos.
@@ -53,23 +53,23 @@ slug: '/ux/personas'
   - **Perfil socioeconômico:** Classe média-alta, mora em um condomínio fechado.
 
 - **Dores (🔴 Alta Gravidade, 🔶 Média Gravidade, 🔵 Baixa Gravidade):**
-  - 🔴 Demanda alta de técnicos buscando peças.
+  - 🔶 Demanda alta de técnicos buscando peças.
   - 🔶 Dificuldade em manter o registro atualizado de todas as peças.
-  - 🔵 Constantes interrupções em suas tarefas para auxiliar técnicos.
+  - 🔴 Constantes interrupções em suas tarefas para auxiliar técnicos.
 
 - **Necessidades:**
-  - 🔴 Manter o almoxarifado organizado.
+  - 🔶 Manter o almoxarifado organizado.
   - 🔶 Facilitar o processo de localização de peças para os técnicos.
   - 🔵 Ter um registro atualizado das operações diárias.
 
 - **Desejos:**
   - 🔴 Ter um sistema automatizado de gerenciamento de estoque.
   - 🔶 Receber alertas sobre baixo estoque de peças importantes.
-  - 🔵 Ter um canal de comunicação direto com fornecedores.
+  - 🔴 Não ser interrompida durante a realização de suas tarefas
 
 - **Preferências:**
-  - 🔴 Interface clara e objetiva.
-  - 🔶 Capacidade de personalizar notificações.
+  - 🔴 Sistema claro e objetivo.
+  - 🔶 Capacidade de personalização do sistema.
   - 🔵 Relatórios detalhados sobre o uso e demanda de peças.
 
 - **Cenários:** 
