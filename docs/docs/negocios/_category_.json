@@ -1,8 +1,8 @@
 {
-    "label": "Entendimento de Negócios",
-    "position": 3,
+    "label": "Negócios",
+    "position": 1,
     "link": {
       "type": "generated-index",
-      "description": "Negócios"
+      "description": "Análises de Negócios"
     }
   }

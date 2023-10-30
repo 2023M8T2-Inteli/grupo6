@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: '/cartografia'
+slug: '/impacto_etico'
 ---
 
 # Análise de impacto ético
