@@ -33,4 +33,4 @@ Em resumo, o TAM representa o mercado total, o SAM é a parte desse mercado que 
 
 <p align="center"> Total Available Market, Serviceable Available Market, Serviceable Obtainable Market </p>
 
-<img src="../../static/img/tamsamsom.png"/>
+![Tam Sam Som](../../static/img/tamsamsom.png)

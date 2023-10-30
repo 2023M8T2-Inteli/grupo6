@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 slug: '/negocios'
 ---
 
@@ -7,8 +7,7 @@ slug: '/negocios'
 
 ## Proposta de valor
 
-<img src="../../static/img/proposta_de_valor.png" />
-
+![Canva de Proposta de Valor](../../static/img/proposta_de_valor.png)
 
 ## Matriz de risco
 
@@ -26,7 +25,8 @@ Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os
 6. Conforto: O conforto do usuário ainda é relevante, pois afeta a experiência dos operadores ao interagir com o robô. O robô deve ser fácil de usar e proporcionar uma sensação de segurança e eficiência.
 7. Praticidade: A praticidade, envolvendo a facilidade de integração do robô com os sistemas e processos existentes da Ambev, é uma métrica importante para garantir que a solução se adapte bem ao ambiente de trabalho da empresa.
 
-<img src="../../static/img/matriz-oceano-azul.png"/>
+![Matriz Oceano Azul](../../static/img/matriz-oceano-azul.png)
+
 
 Após uma análise cuidadosa do gráfico e de fatores externos, identificamos os fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Essa abordagem nos permitirá construir sobre as melhores práticas existentes, ao mesmo tempo em que buscamos diferenciar-nos com melhorias e adaptações específicas para atender às expectativas e necessidades da empresa Ambev.
 
@@ -84,4 +84,4 @@ Em resumo, o TAM representa o mercado total, o SAM é a parte desse mercado que 
 
 <p align="center"> Total Available Market, Serviceable Available Market, Serviceable Obtainable Market </p>
 
-<img src="../../static/img/tamsamsom.png"/>
+![Tam Sam Som](../../static/img/tamsamsom.png)
