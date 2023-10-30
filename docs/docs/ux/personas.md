@@ -3,6 +3,8 @@ sidebar_position: 1
 slug: '/ux/personas'
 ---
 
+# Personas
+
 **Persona 1: João, o Técnico de Manutenção**
 
 - **Grupo demográfico:** 
