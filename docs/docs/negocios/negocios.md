@@ -11,7 +11,6 @@ slug: '/negocios'
 
 
 ## Matriz de risco
-
 ## Oceano azul
 
 A Matriz Oceano Azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Ambev precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa.
