@@ -21,18 +21,16 @@ slug: '/requisitos'
 | 10 | O robô de serviço deve ser capaz de operar continuamente por um período mínimo de 8 horas sem necessidade de recarga, garantindo assim a cobertura de um turno de trabalho completo no almoxarifado |
 </div>
 
-#### 1. Mapeamento de Espaço
+## 1. Mapeamento de Espaço
 
 - **Requisito Não Funcional (RNF):** O sistema deve ser capaz de mapear um espaço de 50m² em cerca de 10 minutos.
-    
 - **Método de Teste:**
-    
     1. **Preparação:** Selecionar um espaço de 50m² para o teste.
     2. **Execução:** Iniciar o processo de mapeamento e cronometrar o tempo necessário para a conclusão.
     3. **Avaliação:** Verificar se o mapeamento foi concluído em 10 minutos ou menos.
     4. **Documentação:** Registrar o tempo exato de mapeamento e a qualidade do mapa gerado.
 
-#### 2. Geração de Relatório
+## 2. Geração de Relatório
 
 - **Requisito Não Funcional (RNF):** O relatório deve ser gerado em menos de 30 segundos.
     
@@ -43,7 +41,7 @@ slug: '/requisitos'
     3. **Avaliação:** Confirmar se o relatório foi gerado em menos de 30 segundos.
     4. **Documentação:** Anotar o tempo de geração do relatório e a integridade dos dados contidos.
 
-#### 3. Geração de Dashboard
+## 3. Geração de Dashboard
 
 - **Requisito Não Funcional (RNF):** O dashboard deve ser gerado em menos de 30 segundos.
     
@@ -54,7 +52,7 @@ slug: '/requisitos'
     3. **Avaliação:** Verificar se o dashboard foi gerado em menos de 30 segundos.
     4. **Documentação:** Documentar o tempo de geração e a qualidade visual e informativa do dashboard.
 
-#### 4. Geração Rápida da Lista de Peças
+## 4. Geração Rápida da Lista de Peças
 
 **Requisito Não Funcional (RNF):** A lista com as peças solicitadas pelo operador deve ser gerada pelo sistema do robô em menos de 5 segundos após a solicitação.
 
@@ -64,7 +62,7 @@ slug: '/requisitos'
 - **Avaliação:** Medir o tempo entre a solicitação e a geração da lista de peças.
 - **Critério de Aceitação:** O requisito é atendido se a lista for gerada em menos de 5 segundos em todas as solicitações.
 
-#### 5. Resposta Rápida ao Comando de Voz
+## 5. Resposta Rápida ao Comando de Voz
 
 **Requisito Não Funcional (RNF):** A resposta do robô ao comando de voz do operador não deve demorar mais que 5 segundos para ser executada.
 
@@ -74,7 +72,7 @@ slug: '/requisitos'
 - **Avaliação:** Cronometrar o tempo entre o comando de voz e a execução da resposta pelo robô.
 - **Critério de Aceitação:** O requisito é atendido se a resposta for executada em menos de 5 segundos em todos os comandos.
 
-#### 6. Processamento Rápido de Comandos de Fala ou Texto
+## 6. Processamento Rápido de Comandos de Fala ou Texto
 
 **Requisito Não Funcional (RNF):** O sistema do robô deve processar comandos de fala ou texto em menos de 5 segundos.
 
@@ -84,7 +82,7 @@ slug: '/requisitos'
 - **Avaliação:** Medir o tempo entre o envio do comando e a resposta do sistema.
 - **Critério de Aceitação:** O requisito é atendido se o processamento for concluído em menos de 5 segundos em todos os comandos.
 
-#### 7. Requisito Não Funcional: Operação Contínua
+## 7. Requisito Não Funcional: Operação Contínua
 
 **Aspecto Específico do Sistema:** Estabilidade Operacional
 
@@ -106,7 +104,7 @@ slug: '/requisitos'
 - **Documentação:**
    - Documentar os resultados do teste, incluindo qualquer falha ou interrupção observada.
 
-#### 8. Requisito Não Funcional: Eficiência de Navegação
+## 8. Requisito Não Funcional: Eficiência de Navegação
 
 **Aspecto Específico do Robô:** Navegação e Tempo de Resposta
 
@@ -127,7 +125,7 @@ slug: '/requisitos'
 -  **Documentação:**
    - Documentar os tempos registrados para cada rota.
 
-#### 9. Requisito Não Funcional: Margem de Segurança
+## 9. Requisito Não Funcional: Margem de Segurança
 
 **Aspecto Específico do Robô:** Segurança na Navegação
 
@@ -148,7 +146,7 @@ slug: '/requisitos'
 -  **Documentação:**
    - Documentar as medições e observações feitas durante o teste.
 
-#### 10. **Requisito Não Funcional:** Autonomia da Bateria
+## 10. **Requisito Não Funcional:** Autonomia da Bateria
 
 **Requisito Não Funcional (RNF):** O robô de serviço deve ser capaz de operar continuamente por um período mínimo de 8 horas sem necessidade de recarga, garantindo assim a cobertura de um turno de trabalho completo no almoxarifado.
 
@@ -170,7 +168,7 @@ slug: '/requisitos'
 - **Documentação:**
     - Documentar os resultados do teste, incluindo o tempo total de operação e o comportamento do robô ao atingir o nível crítico de bateria.
 
-#### Padrão de Qualidade
+## Padrão de Qualidade
 
 - **Clareza e Precisão:** Cada RNF é específico e claro, estabelecendo um limite de tempo de 5 segundos para a execução das tarefas.
 - **Mensurabilidade:** Os requisitos são quantificáveis, definindo um tempo mensurável para avaliação.
