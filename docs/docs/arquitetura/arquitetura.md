@@ -7,19 +7,29 @@ slug: '/arquitetura'
 
 Essa seção da documentação está destinada a arquitetura do sistema. O grupo optou por desenvolver três arquiteturas diferentes do sistema a fim de ter um entendimento melhor do desafio proposto pelo parceiro e desenvolver uma arquitetura mais robusta.
 As arquiteturas foram divididas da seguinte forma:
+
 - Arquitetura de nível conceitual
 - Arquitetura de nível lógico
 - Arquitetura de nível sistêmico
+
 As três estão explicadas abaixo
-<br>
+
+<br/>
+
 ## Arquitetura de nível conceitual
+
 Como o próprio termo remete, a arquitetura conceitual é focada em entender o conceito de como a aplicação irá funcionar. O grupo optou por fazer a construção de uma arquitetura dessa forma pelo seu nível de abstração, esse tipo de arquitetura, diferentemnete das duas seguintes não fala sobre tecnologias ou a parte técnica da aplicação, mas sim dos módulos que estarão presentes na mesma e suas respectivas responsabilidades.
-<br>
+
+<br />
+
 <p align="center"> Total Available Market, Serviceable Available Market, Serviceable Obtainable Market </p>
-<img src="../../static/img/arquitetura_conceitual.png">
-</p>
-<br>
+
+<img src="../../static/img/arquitetura_conceitual.png" />
+
+<br />
+
 O fluxo interno seguiria o seguinte percurso:
+
 - O usuário entra em contato com o robô com um comando de voz por meio do módulo interface pc
 - O robô direciona esse comando para os três módulos na direita. O STT sendo responsável por converter de fala para texto o comando, o LLM interpretando essa informação de linguagem natural e o TTS convertendo essa informação já interpretada de volta para fala.
 - O passo anterior foi pensado para manter um nível alto de acessibilidade de fala, contemplando diferentes grupos na aplicação. Pois, além da informação interpretada ser exibida na tela LCD para confirmação, o robô também a exibirá de forma falada
