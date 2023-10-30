@@ -24,7 +24,7 @@ Como o próprio termo remete, a arquitetura conceitual é focada em entender o c
 
 <p align="center"> Total Available Market, Serviceable Available Market, Serviceable Obtainable Market </p>
 
-<img src="../../static/img/arquitetura_conceitual.png" />
+![arquitetura](/img/arquitetura_conceitual.png)
 
 <br />
 
