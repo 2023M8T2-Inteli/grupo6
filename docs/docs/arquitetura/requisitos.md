@@ -32,5 +32,6 @@ slug: '/requisitos'
 | 7 | O sistema deve ser capaz de operar por pelo menos 8 horas contínuas sem falhas |
 | 8 | O robô deve encontrar a melhor rota para chegar nos seus destinos em menos de 20 minutos |
 | 9 | O robô deve ter uma margem de segurança em suas rotas de, pelo menos, 5cm |
+| 10 | O robô de serviço deve ser capaz de operar continuamente por um período mínimo de 8 horas sem necessidade de recarga, garantindo assim a cobertura de um turno de trabalho completo no almoxarifado |
 
 </div>
