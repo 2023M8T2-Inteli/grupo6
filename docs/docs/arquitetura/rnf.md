@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: '/requisitos'
+slug: '/requisitos-nao-funcionais'
 ---
 
 # Requisitos Não Funcionais
