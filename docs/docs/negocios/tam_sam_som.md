@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: '/negocios/mercado'
+slug: '/negocios/tam-sam-som'
 ---
 
 # TAM SAM SOM
