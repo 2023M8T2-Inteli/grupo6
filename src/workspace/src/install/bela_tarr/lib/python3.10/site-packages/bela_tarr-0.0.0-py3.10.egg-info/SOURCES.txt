@@ -10,6 +10,7 @@ setup.py
 ../build/bela_tarr/bela_tarr.egg-info/zip-safe
 bela_tarr/__init__.py
 bela_tarr/movement.py
+launch/mapping_launch.py
 resource/bela_tarr
 test/test_copyright.py
 test/test_flake8.py
