@@ -1,0 +1,135 @@
+[3.193s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[3.194s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f8f357cd780>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f8f35a3d8d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f8f35a3d8d0>>)
+[3.441s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[3.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[3.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[3.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[3.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[3.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[3.442s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/igor/Code/grupo6/src/workspace'
+[3.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[3.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[3.443s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[3.443s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[3.443s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[3.443s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[3.443s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[3.444s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[3.444s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[3.469s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[3.469s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[3.469s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[3.469s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[3.469s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[3.469s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[3.470s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[3.470s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[3.470s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[3.470s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[3.470s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[3.470s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[3.471s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extensions ['ignore', 'ignore_ament_install']
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extension 'ignore'
+[3.472s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extension 'ignore_ament_install'
+[3.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extensions ['colcon_pkg']
+[3.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extension 'colcon_pkg'
+[3.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extensions ['colcon_meta']
+[3.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extension 'colcon_meta'
+[3.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extensions ['ros']
+[3.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/bela_tarr) by extension 'ros'
+[3.480s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bela_tarr' with type 'ros.ament_python' and name 'bela_tarr'
+[3.481s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[3.481s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[3.482s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[3.483s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[3.483s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[3.483s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[3.484s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[3.485s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[3.485s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[3.485s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[3.485s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[3.485s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[3.485s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[3.485s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.766s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[3.766s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.850s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 399 installed packages in /opt/ros/humble
+[3.853s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'cmake_args' from command line to 'None'
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'cmake_target' from command line to 'None'
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'cmake_clean_cache' from command line to 'False'
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'cmake_clean_first' from command line to 'False'
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'cmake_force_configure' from command line to 'False'
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'ament_cmake_args' from command line to 'None'
+[4.134s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'catkin_cmake_args' from command line to 'None'
+[4.135s] Level 5:colcon.colcon_core.verb:set package 'bela_tarr' build argument 'catkin_skip_building_tests' from command line to 'False'
+[4.135s] DEBUG:colcon.colcon_core.verb:Building package 'bela_tarr' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/igor/Code/grupo6/src/workspace/build/bela_tarr', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/igor/Code/grupo6/src/workspace/install/bela_tarr', 'merge_install': False, 'path': '/home/igor/Code/grupo6/src/workspace/src/bela_tarr', 'symlink_install': False, 'test_result_base': None}
+[4.166s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[4.205s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[4.205s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/igor/Code/grupo6/src/workspace/src/bela_tarr' with build type 'ament_python'
+[4.205s] Level 1:colcon.colcon_core.shell:create_environment_hook('bela_tarr', 'ament_prefix_path')
+[4.262s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[4.263s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/hook/ament_prefix_path.ps1'
+[4.269s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/hook/ament_prefix_path.dsv'
+[4.273s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/hook/ament_prefix_path.sh'
+[4.314s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.314s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.009s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/igor/Code/grupo6/src/workspace/src/bela_tarr'
+[5.049s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.049s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.617s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/igor/Code/grupo6/src/workspace/src/bela_tarr': PYTHONPATH=/home/igor/Code/grupo6/src/workspace/build/bela_tarr/prefix_override:/home/igor/Code/grupo6/src/workspace/install/bela_tarr/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bela_tarr build --build-base /home/igor/Code/grupo6/src/workspace/build/bela_tarr/build install --record /home/igor/Code/grupo6/src/workspace/build/bela_tarr/install.log --single-version-externally-managed
+[7.339s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/igor/Code/grupo6/src/workspace/src/bela_tarr' returned '0': PYTHONPATH=/home/igor/Code/grupo6/src/workspace/build/bela_tarr/prefix_override:/home/igor/Code/grupo6/src/workspace/install/bela_tarr/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bela_tarr build --build-base /home/igor/Code/grupo6/src/workspace/build/bela_tarr/build install --record /home/igor/Code/grupo6/src/workspace/build/bela_tarr/install.log --single-version-externally-managed
+[7.398s] Level 1:colcon.colcon_core.environment:checking '/home/igor/Code/grupo6/src/workspace/install/bela_tarr' for CMake module files
+[7.400s] Level 1:colcon.colcon_core.environment:checking '/home/igor/Code/grupo6/src/workspace/install/bela_tarr' for CMake config files
+[7.403s] Level 1:colcon.colcon_core.environment:checking '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/lib'
+[7.404s] Level 1:colcon.colcon_core.environment:checking '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/bin'
+[7.404s] Level 1:colcon.colcon_core.environment:checking '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/lib/pkgconfig/bela_tarr.pc'
+[7.404s] Level 1:colcon.colcon_core.environment:checking '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/lib/python3.10/site-packages'
+[7.404s] Level 1:colcon.colcon_core.shell:create_environment_hook('bela_tarr', 'pythonpath')
+[7.437s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/hook/pythonpath.ps1'
+[7.438s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/hook/pythonpath.dsv'
+[7.439s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/hook/pythonpath.sh'
+[7.440s] Level 1:colcon.colcon_core.environment:checking '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/bin'
+[7.441s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bela_tarr)
+[7.479s] INFO:colcon.colcon_core.shell:Creating package script '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/package.ps1'
+[7.482s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/package.dsv'
+[7.485s] INFO:colcon.colcon_core.shell:Creating package script '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/package.sh'
+[7.489s] INFO:colcon.colcon_core.shell:Creating package script '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/package.bash'
+[7.494s] INFO:colcon.colcon_core.shell:Creating package script '/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/bela_tarr/package.zsh'
+[7.500s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/igor/Code/grupo6/src/workspace/install/bela_tarr/share/colcon-core/packages/bela_tarr)
+[7.500s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.501s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.501s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[7.501s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.554s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.554s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.554s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.578s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.621s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/igor/Code/grupo6/src/workspace/install/local_setup.ps1'
+[7.623s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/igor/Code/grupo6/src/workspace/install/_local_setup_util_ps1.py'
+[7.628s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/igor/Code/grupo6/src/workspace/install/setup.ps1'
+[7.665s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/igor/Code/grupo6/src/workspace/install/local_setup.sh'
+[7.668s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/igor/Code/grupo6/src/workspace/install/_local_setup_util_sh.py'
+[7.669s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/igor/Code/grupo6/src/workspace/install/setup.sh'
+[7.709s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/igor/Code/grupo6/src/workspace/install/local_setup.bash'
+[7.711s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/igor/Code/grupo6/src/workspace/install/setup.bash'
+[7.751s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/igor/Code/grupo6/src/workspace/install/local_setup.zsh'
+[7.754s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/igor/Code/grupo6/src/workspace/install/setup.zsh'

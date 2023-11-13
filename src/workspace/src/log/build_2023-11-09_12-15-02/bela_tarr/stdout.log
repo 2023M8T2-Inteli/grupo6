@@ -1,0 +1,35 @@
+running egg_info
+creating ../build/bela_tarr/bela_tarr.egg-info
+writing ../build/bela_tarr/bela_tarr.egg-info/PKG-INFO
+writing dependency_links to ../build/bela_tarr/bela_tarr.egg-info/dependency_links.txt
+writing entry points to ../build/bela_tarr/bela_tarr.egg-info/entry_points.txt
+writing requirements to ../build/bela_tarr/bela_tarr.egg-info/requires.txt
+writing top-level names to ../build/bela_tarr/bela_tarr.egg-info/top_level.txt
+writing manifest file '../build/bela_tarr/bela_tarr.egg-info/SOURCES.txt'
+reading manifest file '../build/bela_tarr/bela_tarr.egg-info/SOURCES.txt'
+writing manifest file '../build/bela_tarr/bela_tarr.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/build
+creating /home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/build/lib
+creating /home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/build/lib/bela_tarr
+copying bela_tarr/movement.py -> /home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/build/lib/bela_tarr
+copying bela_tarr/__init__.py -> /home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/build/lib/bela_tarr
+running install
+running install_lib
+creating /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/lib/python3.10/site-packages/bela_tarr
+copying /home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/build/lib/bela_tarr/movement.py -> /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/lib/python3.10/site-packages/bela_tarr
+copying /home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/build/lib/bela_tarr/__init__.py -> /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/lib/python3.10/site-packages/bela_tarr
+byte-compiling /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/lib/python3.10/site-packages/bela_tarr/movement.py to movement.cpython-310.pyc
+byte-compiling /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/lib/python3.10/site-packages/bela_tarr/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/share/ament_index
+creating /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/share/ament_index/resource_index
+creating /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/share/ament_index/resource_index/packages
+copying resource/bela_tarr -> /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/share/ament_index/resource_index/packages
+copying package.xml -> /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/share/bela_tarr
+running install_egg_info
+Copying ../build/bela_tarr/bela_tarr.egg-info to /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/lib/python3.10/site-packages/bela_tarr-0.0.0-py3.10.egg-info
+running install_scripts
+Installing movement script to /home/igor/Code/grupo6/src/workspace/src/install/bela_tarr/lib/bela_tarr
+writing list of installed files to '/home/igor/Code/grupo6/src/workspace/src/build/bela_tarr/install.log'
