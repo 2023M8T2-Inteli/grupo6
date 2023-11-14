@@ -32,6 +32,7 @@ No ambiente de navegação, um pacote específico foi desenvolvido dentro do wor
 É relevante observar que o nó responsável pela inicialização da pose do robô é concebido de maneira efêmera, encerrando-se automaticamente após a publicação da pose. Em contraste, os outros nós permanecem ativos durante toda a interação do usuário, desempenhando papéis específicos no contexto da navegação. Essa arquitetura proporciona uma integração eficiente e funcional para o controle e visualização do robô em seu ambiente.
 
 **Execução**
+
 Para executar a navegação, utilize os seguintes comandos na pasta raiz do workspace:
 ```
 colcon build
