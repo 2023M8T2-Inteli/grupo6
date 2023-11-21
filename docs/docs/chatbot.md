@@ -3,21 +3,19 @@ sidebar_position: 70
 slug: '/chatbot'
 ---
 
-# Sistema de chatbot
+# Chatbot
 
-Na sprint anterior, o objetivo era desenvolver um chat simples que utilizasse um publisher para enviar informações fornecidas por um usuário para um tópico chamado "positions" no código. O chat deveria ser criado na linha de comando (CLI), e as informações do usuário seriam processadas usando expressões regulares (regex) para extrair dados relevantes.
+Na Sprint 2, buscamos criar um chat simples que empregasse um publisher para encaminhar informações do usuário a um tópico denominado "positions" no código. Este chat foi concebido para operar na linha de comando (CLI), enquanto as informações do usuário seriam processadas por meio de expressões regulares (regex) para extrair os dados pertinentes.
 
+Durante o processo, estabelecemos expressões regulares no dicionário denominado "intent_dict", no qual cada expressão estava vinculada a uma intenção específica do usuário. Por exemplo, a expressão regular r"\bponto\s+x\b" correspondia à intenção "x". Essas intenções refletiam os diversos tipos de solicitações que os usuários poderiam realizar na plataforma, oferecendo uma estrutura organizada para compreender e responder às necessidades dos usuários.
 
-Foram definidas expressões regulares no dicionário chamado "intent_dict", onde cada expressão correspondia a uma intenção específica do usuário. Por exemplo, a expressão regular `r"\bponto\s+x\b"` estava associada à intenção "x". Essas intenções representavam os pedidos que os usuários poderiam fazer na plataforma.
-Além disso, foi criado um dicionário chamado "point_dict" para associar pontos específicos a cada intenção. Cada intenção tinha um conjunto de pontos pré-definidos que seriam acionados como próxima movimentação do robô. Esses pontos eram fixos no almoxarifado, refletindo as restrições do ambiente.
-O script incluí a classe "ChabotPub(Node)" dedicada à criação de um publisher ROS (Robot Operating System) para o tópico "positions". Esse tópico seria consumido por um script de navegação, permitindo a comunicação eficiente entre diferentes partes do sistema.
+Adicionalmente, elaboramos um dicionário denominado "point_dict" para correlacionar pontos específicos a cada intenção. Cada intenção continha um conjunto de pontos previamente determinados que seriam acionados como a próxima movimentação do robô. Esses pontos, fixos no almoxarifado, refletiam as restrições e características específicas do ambiente, oferecendo um mapeamento claro das possíveis ações do robô de acordo com as intenções dos usuários.
 
+O script incorpora a classe "ChatbotPub(Node)", especificamente criada para estabelecer um publisher ROS (Robot Operating System) destinado ao tópico "positions". Esse tópico é projetado para ser consumido por um script de navegação, facilitando uma comunicação eficaz e ágil entre diferentes componentes do sistema, permitindo uma integração fluida e coordenada das operações do robô.
 
-No entanto, na implementação anterior, houve dificuldades em integrar completamente essa solução, resultando na decisão de manter o script em um único arquivo. O ROS não foi utilizado, e em vez disso, uma lista de pontos foi passada diretamente ao robô simulado no Gazebo para seguir. Essa abordagem simplificada foi adotada temporariamente, mas o objetivo para a próxima sprint é reverter essa decisão.
+Na implementação anterior, enfrentamos desafios significativos ao integrar plenamente essa solução, levando à opção de manter o script em um único arquivo. O ROS não foi empregado conforme planejado; em vez disso, optamos por transmitir diretamente uma lista de pontos ao robô simulado no Gazebo para sua sequência de movimentos. Essa abordagem simplificada foi adotada temporariamente para garantir a continuidade do progresso, mas o objetivo principal da próxima fase é reverter essa decisão e retomar a implementação original, visando uma integração completa do ROS para aprimorar a comunicação e o controle do robô.
 
-
-A intenção é desacoplar o sistema, evitando a necessidade de incluir o ROS no mesmo arquivo e, assim, aumentar a eficiência do código. A ideia é retomar a implementação original, onde o publisher ROS seria utilizado para uma comunicação mais robusta e flexível entre os diferentes componentes do sistema. Isso permitiria uma integração mais eficiente e modular, melhorando a escalabilidade e manutenção do código.
-
+A intenção é desvincular os elementos do sistema, evitando a dependência de incluir o ROS no mesmo arquivo, buscando um aumento na eficiência do código. A proposta é voltar à implementação original, na qual o publisher ROS seria empregado para estabelecer uma comunicação mais sólida e adaptável entre os distintos componentes do sistema. Essa abordagem possibilitaria uma integração mais eficiente e modular, o que, por sua vez, aprimoraria a escalabilidade e a facilidade de manutenção do código, promovendo um desenvolvimento mais robusto e flexível do sistema como um todo.
 
 <p align="center"> Script de chatbot usando subscriber e regex </p>
 
