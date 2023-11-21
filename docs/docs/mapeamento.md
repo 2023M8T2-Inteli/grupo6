@@ -40,6 +40,13 @@ source install/setup.bash
 bash run.sh <nome-do-mapa>.yaml
 ```
 
+## Testes
+### Sprint 2
+O vídeo abaixo representa o resultado do processo de desenvolvimento da primeira versão do nosso sistema de mapeamento e navegação. 
+
+
+
+Através deste primeiro registro, será possível acompanhar a evolução e os desafios enfrentados na criação do método fundamental que permite ao robô movimentar-se autonomamente em ambientes desconhecidos. Desde a construção do mapa do ambiente até a integração com uma interface de comunicação eficiente para direcionar os destinos desejados.
 
 
 
