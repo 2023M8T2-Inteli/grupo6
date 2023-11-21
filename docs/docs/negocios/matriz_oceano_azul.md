@@ -19,9 +19,6 @@ Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os
 
 ![Matriz Oceano Azul](../../static/img/matriz-oceano-azul.png)
 
-
-Após uma análise cuidadosa do gráfico e de fatores externos, identificamos os fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Essa abordagem nos permitirá construir sobre as melhores práticas existentes, ao mesmo tempo em que buscamos diferenciar-nos com melhorias e adaptações específicas para atender às expectativas e necessidades da empresa Ambev.
-
 **Eliminar**
 
 - Eliminar o desperdício de tempo que os operadores gastam procurando manualmente as peças no almoxarifado.
@@ -41,3 +38,5 @@ Após uma análise cuidadosa do gráfico e de fatores externos, identificamos os
 - Elevar a capacidade do chatbot de recomendar peças adicionais ou alternativas com base nas necessidades do operador, além de personalizar suas respostas e recomendações com base no histórico de solicitações do operador.
 - Elevar a capacidade do sistema de integração com outros sistemas da AMBEV, como o sistema de gestão de estoque e manutenção.
 - Implementar tecnologias de eficiência energética no robô para aumentar sua autonomia e reduzir custos operacionais.
+
+Após uma análise cuidadosa do gráfico e de fatores externos, identificamos os fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Essa abordagem nos permitirá construir sobre as melhores práticas existentes, ao mesmo tempo em que buscamos diferenciar-nos com melhorias e adaptações específicas para atender às expectativas e necessidades da empresa Ambev.
