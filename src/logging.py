@@ -1,14 +1,14 @@
-import rclpy  # Importa o pacote rclpy para trabalhar com ROS 2
-from rclpy.node import Node  # Importa a classe Node para criar um nó
-from std_msgs.msg import String  # Importa o tipo de mensagem String do ROS
-import logging  # Importa o módulo de logging para registro de mensagens
+import rclpy  
+from rclpy.node import Node  
+from std_msgs.msg import String 
+import logging 
 
 class LoggerNode(Node):
     def __init__(self):
         """
         Inicializa o nó do Logger.
         """
-        super().__init__("logger_node")  # Chama o construtor da classe Node
+        super().__init__("logger_node")
         # Configuração do ROS
         self.subscription = self.create_subscription(
             String, "log_register", self.listener_callback, 10
@@ -29,16 +29,16 @@ def main(args=None):
     """
     Função principal para iniciar o nó do logger.
     """
-    rclpy.init(args=args)  # Inicializa o sistema ROS
+    rclpy.init(args=args)  
 
-    logger_node = LoggerNode()  # Cria uma instância do nó LoggerNode
+    logger_node = LoggerNode()  
     try:
-        rclpy.spin(logger_node)  # Mantém o programa executando e aguardando eventos
+        rclpy.spin(logger_node) 
     except KeyboardInterrupt:
         pass
     finally:
-        logger_node.destroy_node()  # Finaliza o nó
-        rclpy.shutdown()  # Encerra o sistema ROS
+        logger_node.destroy_node()
+        rclpy.shutdown()  
 
 if __name__ == "__main__":
-    main()  # Chama a função principal para iniciar o nó
+    main()
