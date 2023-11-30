@@ -10,7 +10,7 @@ slug: '/negocios/analise-financeira'
 ### Time de Desenvolvimento
 
 
-| Cargo                | Duração (meses) | Média Salarial | Total |
+| Cargo                | Duração (meses) | Média Salarial | Total (USD) |
 |---------------------|-------------------|----------------------------|----------------|
 | Gerente de Projeto     | 12                | $8,500                      | $102,000        |
 | Engenheiro de Automação | 9                 | $7,750                      | $69,750         |
@@ -19,7 +19,7 @@ slug: '/negocios/analise-financeira'
 | Técnico de Manutenção | 12             | $5,000                      | $60,000         |
 | Safety Officer      | 9                 | $6,250                      | $56,250         |
 | Especialista em Treinamento | 2                 | $6,000                      | $12,000         |
-| **Total**           | -                 | -                          | **$401,625**    |
+| **Total** (USD)          | -                 | -                          | **$401,625**    |
 
 
 A equipe fundamental precisa abranger variadas competências, assegurando implantação e operação fluidas dos sistemas automatizados. São estas as principais áreas de expertise e funções de cada membro:
@@ -56,7 +56,7 @@ A equipe fundamental precisa abranger variadas competências, assegurando implan
 ### Custos adicionais
 
 
-| Item | Descrição | Custo Estimado |
+| Item | Descrição | Custo Estimado (USD)|
 |------|-----------|----------------|
 | **Equipamentos e Hardware** | | |
 | | AS/RS | $1.250.000 |
@@ -88,7 +88,7 @@ A equipe fundamental precisa abranger variadas competências, assegurando implan
 | **Ferramentas de Gerenciamento de Projetos** | | |
 | | Licenças de Software (por usuário/mês) | $55 |
 | **Fundo de Contingência (15% do total)** | | $347.738,25 |
-| **Custo Estimado Total** | | $2.665.993,25 |
+| **Custo Estimado Total** (USD) | | $2.665.993,25 |
 
 
 1. **Equipamentos e Hardware**:
@@ -135,7 +135,7 @@ A equipe fundamental precisa abranger variadas competências, assegurando implan
 
 ## Retorno
 
-| Item                             | Economia Anual Estimada   |
+| Item                             | Economia Anual Estimada (USD)   |
 |----------------------------------|---------------------------|
 | **Economia de Mão de Obra**      | $50,000 a $100,000        |
 | **Aumento de Produtividade**     | $150,000 a $300,000       |
@@ -147,7 +147,7 @@ A equipe fundamental precisa abranger variadas competências, assegurando implan
 | **Redução nos Custos de Treinamento** | $2,500 a $5,000     |
 | **Melhoria na Satisfação do Cliente** | $10,000 a $50,000  |
 | **Segurança e Conformidade**     | $5,000 a $50,000          |
-| **Economia Total**      | $250,000 a $575,500       |
+| **Economia Anual Estimada** (USD)      | $250,000 a $575,500       |
 
 
 **1. Economia de Mão de Obra**:
@@ -209,7 +209,7 @@ Para calcular o ponto de equilíbrio, é necessário determinar o ponto em que a
 Vamos usar os dados fornecidos:
 
 1. **Investimento Total**:
-   - Custo do : **$401.625**.
+   - Custo do time de desenvolvimento: **$401.625**.
    - Custos adicionais associados a equipamentos, software, modificações de infraestrutura, etc., foram fornecidos como uma faixa. Para simplificar, vamos pegar o ponto médio de cada faixa fornecida. Somando os pontos médios, obtemos um custo adicional estimado de aproximadamente **$1.500.000** (esta é uma estimativa aproximada com base nos dados fornecidos anteriormente).
    - Investimento Total = $401.625 (custos da equipe) + $1.500.000 (custos adicionais) = **$1.901.625**.
 
@@ -226,3 +226,6 @@ $$ \text{Ponto de equilíbrio} \approx 4,6 \text{ anos} $$
 
 
 Portanto, com base nos dados e estimativas fornecidos, o ponto de equilíbrio para o projeto de automação do armazém é de aproximadamente **4,6 anos**. Após esse período, a empresa começaria a perceber economias líquidas do projeto.
+
+
+> Dados acessados em 21/10/2023.
