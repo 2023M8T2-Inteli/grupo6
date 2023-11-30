@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 from launch_ros.actions import Node
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
@@ -10,20 +11,24 @@ def generate_launch_description():
         package='chat',
         executable='input',
         name='chat_input',
+        prefix='gnome-terminal --',
         output='screen'
     )
+
     chat_llm = Node(
         package='chat',
         executable='llm',
         name='chat_llm',
-        output='screen'
+        output='screen',
     )
+
     chat_tts = Node(
         package='chat',
         executable='tts',
         name='chat_tts',
         output='screen'
     )
+
     chat_output = Node(
         package='chat',
         executable='output',
@@ -31,9 +36,9 @@ def generate_launch_description():
         output='screen'
     )
 
-    return LaunchDescription([      
+    return LaunchDescription([    
         chat_input,
         chat_llm,
-        chat_tts,
         chat_output,
+        chat_tts,
     ])

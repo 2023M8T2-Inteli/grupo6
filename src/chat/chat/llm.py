@@ -35,6 +35,8 @@ class LLMNode(Node):
     def load(self):
         load_dotenv()
 
+        model = ChatOpenAI(model="gpt-3.5-turbo")
+
         loader = PyPDFLoader("./chat/chat/data/points.pdf")
         pages = loader.load_and_split()
 
@@ -47,15 +49,12 @@ class LLMNode(Node):
 
         retriever = vectorstore.as_retriever()
 
-        template = """Answer the question based only on the following context:
+        prompt = ChatPromptTemplate.from_template(
+        """Answer the question based on the following context:
         {context}
 
         Question: {question}
-        """
-
-        prompt = ChatPromptTemplate.from_template(template)
-
-        model = ChatOpenAI(model="gpt-3.5-turbo")
+        """)
 
         self.chain = (
             {"context": retriever, "question": RunnablePassthrough()}

@@ -1,0 +1,4 @@
+python-dotenv
+pypdf
+tiktoken
+faiss-gpu

@@ -34,13 +34,13 @@ class TTSNode(Node):
         self.message = msg.data
         self.get_logger().info(f"Recebi: {self.message}")
     
-    def text_to_speech(text, language='en'):
-        tts = gTTS(text, lang=language)
-        audio_file = "speech.mp3"
-        tts.save(audio_file)
-        return audio_file
+    def text_to_speech(self, text, language='en'):
+        self.tts = gTTS(text, lang=language)
+        self.audio_file = "speech.mp3"
+        self.tts.save(self.audio_file)
+        return self.audio_file
     
-    def play_audio(audio_file):
+    def play_audio(self, audio_file):
         os.system(f"mpg321 {audio_file}")
 
 def main(args=None):
