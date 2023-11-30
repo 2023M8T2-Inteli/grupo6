@@ -24,6 +24,7 @@ setup(
             "input=chat.input:main",
             "llm=chat.llm:main",
             "output=chat.output:main",
+            "tts=chat.tts:main",
         ],
     },
 )
