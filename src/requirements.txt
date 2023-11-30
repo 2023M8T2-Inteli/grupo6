@@ -2,3 +2,5 @@ python-dotenv
 pypdf
 tiktoken
 faiss-gpu
+openai-whisper
+gtts #talvez

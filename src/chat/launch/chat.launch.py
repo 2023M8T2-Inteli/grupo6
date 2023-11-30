@@ -22,17 +22,24 @@ def generate_launch_description():
         output='screen',
     )
 
-    chat_tts = Node(
-        package='chat',
-        executable='tts',
-        name='chat_tts',
-        output='screen'
-    )
-
     chat_output = Node(
         package='chat',
         executable='output',
         name='chat_output',
+        output='screen'
+    )
+
+    chat_stt = Node(
+        package='chat',
+        executable='stt',
+        name='chat_stt',
+        output='screen'
+    )
+
+    chat_tts = Node(
+        package='chat',
+        executable='tts',
+        name='chat_tts',
         output='screen'
     )
 

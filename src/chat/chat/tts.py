@@ -4,7 +4,6 @@ from rclpy.node import Node
 from std_msgs.msg import String, Float32MultiArray
 from gtts import gTTS
 import os
-import re
 
 class TTSNode(Node):
 
@@ -53,7 +52,6 @@ def main(args=None):
     rclpy.shutdown()
 
 if __name__ == "__main__":
-    #main()
     tts = gTTS(text="Hello World!", lang='en')
     audio_file = "speech.mp3"
     tts.save(audio_file)
