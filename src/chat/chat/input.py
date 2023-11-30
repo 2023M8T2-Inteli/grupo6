@@ -6,11 +6,8 @@ from std_msgs.msg import String
 class InputNode(Node):
     def __init__(self):
         super().__init__('input_node')
-        self.publisher_ = self.create_publisher(
-            msg_type=String, 
-            topic='/llm', 
-            qos_profile=10
-        )
+        self.publisher_ = self.create_publisher(msg_type=String, topic='/llm', qos_profile=10)
+        self.publisher.log = self.create_publisher(msg_type=String, topic='log_register', qos_profile=10)
         
         self.get_logger().info('Estou pronto para receber perguntas...')
     
@@ -28,6 +25,7 @@ class InputNode(Node):
         msg = String()
         msg.data = command
         self.publisher_.publish(msg)
+        self.publisher.log.publish(msg)
         self.get_logger().info(f"Publicando '{command}'")
 
 def main(args=None):

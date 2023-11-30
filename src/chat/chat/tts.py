@@ -9,12 +9,7 @@ class TTSNode(Node):
 
     def __init__(self, timer_period=0.2):
         super().__init__('tts_node')
-        self.subscription_ = self.create_subscription(
-            msg_type=String,
-            topic="/chatbot",
-            callback=self.chatbot_callback,
-            qos_profile=10
-        )
+        self.subscription_ = self.create_subscription(msg_type=String,topic="/chatbot",callback=self.chatbot_callback,qos_profile=10)
 
         self.get_logger().info("Ouvindo ao /chatbot")
 
