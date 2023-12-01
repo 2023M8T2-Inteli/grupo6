@@ -1,31 +1,16 @@
 ---
-sidebar_position: 1
-slug: '/arquitetura'
+sidebar_position: 2
+slug: '/arquitetura/v1'
 ---
 
-# Descrição da arquitetura do sistema
 
-Essa seção da documentação está destinada a arquitetura do sistema. O grupo optou por desenvolver três arquiteturas diferentes do sistema a fim de ter um entendimento melhor do desafio proposto pelo parceiro e desenvolver uma arquitetura mais robusta.
-As arquiteturas foram divididas da seguinte forma:
-
-- Arquitetura de nível conceitual
-- Arquitetura de nível lógico
-- Arquitetura de nível sistêmico
-
-As três estão explicadas abaixo
-
-<br/>
-
-## Arquitetura de nível conceitual
+# Arquitetura versão 1 (conceitual)
 
 Como o próprio termo remete, a arquitetura conceitual é focada em entender o conceito de como a aplicação irá funcionar. O grupo optou por fazer a construção de uma arquitetura dessa forma pelo seu nível de abstração, esse tipo de arquitetura, diferentemnete das duas seguintes não fala sobre tecnologias ou a parte técnica da aplicação, mas sim dos módulos que estarão presentes na mesma e suas respectivas responsabilidades.
 
 <br />
 
-<p align="center"> Total Available Market, Serviceable Available Market, Serviceable Obtainable Market </p>
-
-![Arquitetura Conceitual](../../static/img/arquitetura_conceitual.png)
-
+![Arquitetura Conceitual](../../../static/img/arquitetura_conceitual.png)
 
 <br />
 
