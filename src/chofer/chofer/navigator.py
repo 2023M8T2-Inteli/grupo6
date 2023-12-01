@@ -7,11 +7,10 @@ from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import Float32MultiArray
 from tf_transformations import quaternion_from_euler
 from math import pi
-import re
 
-class Navigation(Node):
+class Navigator(Node):
     def __init__(self):
-        super().__init__('navigation')
+        super().__init__('navigator')
         self.navigator = BasicNavigator()
         self.initial_pose = self.create_pose_stamped(self.navigator, 0.0, 0.0, 0.0)
 
@@ -50,8 +49,8 @@ class Navigation(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    navigation = Navigation()
-    rclpy.spin(navigation)
+    navigator = Navigator()
+    rclpy.spin(navigator)
     rclpy.destroy_node()
     rclpy.shutdown()
     

@@ -7,7 +7,7 @@ class InputNode(Node):
     def __init__(self):
         super().__init__('input_node')
         self.publisher_ = self.create_publisher(msg_type=String, topic='/llm', qos_profile=10)
-        self.publisher.log = self.create_publisher(msg_type=String, topic='log_register', qos_profile=10)
+        self.publisher_log = self.create_publisher(msg_type=String, topic='log_register', qos_profile=10)
         
         self.get_logger().info('Estou pronto para receber perguntas...')
     

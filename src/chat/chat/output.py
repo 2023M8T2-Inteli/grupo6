@@ -18,7 +18,7 @@ class OutputNode(Node):
         self.get_logger().info("Ouvindo ao /chatbot")
 
         self.publisher_ = self.create_publisher(msg_type = Float32MultiArray,topic = '/waypoints',qos_profile=10)
-        self.publisher.log = self.cretete_publisher(msg_type =String, topic="log_register", qos_profile=10 )
+        self.publisher_log = self.create_publisher(msg_type =String, topic="log_register", qos_profile=10 )
         self.pattern = r"\(\s*\d+(\.\d+)?\s*,\s*\d+(\.\d+)?\s*\)"
 
     def listener_callback(self, msg):
@@ -35,7 +35,7 @@ class OutputNode(Node):
             print(points)
             
             self.publisher_.publish(points)
-            self.publisher.log.publish(msg)
+            self.publisher_log.publish(msg)
         else:
             self.get_logger().info("Não encontrei os pontos")
 

@@ -23,7 +23,7 @@ class LLMNode(Node):
             qos_profile=10
         )
         self.publisher_ = self.create_publisher(msg_type=String, topic="/chatbot", qos_profile=10)
-        self.publisher.log = self.create_publisher(msg_type=String, topic="log_register", qos_profile=10)
+        self.publisher_log = self.create_publisher(msg_type=String, topic="log_register", qos_profile=10)
         self.load()
 
         self.get_logger().info("LLM Node created successfully")
@@ -70,7 +70,7 @@ class LLMNode(Node):
         msg = String()
         msg.data = content
         self.publisher_.publish(msg)
-        self.publisher.log.publish(msg)
+        self.publisher_log.publish(msg)
         self.get_logger().info(f"Publicando '{content}'")
 
 
