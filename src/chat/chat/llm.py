@@ -1,7 +1,8 @@
 #! /bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import Float32MultiArray
+import re
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
@@ -11,24 +12,23 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from dotenv import load_dotenv
+import gradio as gr
 
 
 class LLMNode(Node):
     def __init__(self):
         super().__init__('llm_node')
-        self.subscription_ = self.create_subscription(
-            msg_type=String,
-            topic="/llm",
-            callback=self.listener_callback,
-            qos_profile=10
-        )
-        self.publisher_ = self.create_publisher(
-            msg_type=String,
-            topic="/chatbot",
-            qos_profile=10
-        )
+
+        self.pattern = r"\(\s*\d+(\.\d+)?\s*,\s*\d+(\.\d+)?\s*\)"
+
+        self.publisher_points = self.create_publisher(
+            msg_type = Float32MultiArray,
+            topic = '/waypoints',
+            qos_profile=10)
 
         self.load()
+
+        self.run()
 
         self.get_logger().info("LLM Node created successfully")
 
@@ -62,20 +62,46 @@ class LLMNode(Node):
             | model
         )
 
-    def listener_callback(self, msg):
-        self.get_logger().info(f"Recebi '{msg.data}' ")
-        content = ""
-        for s in self.chain.stream(msg.data):
-            content += s.content
-        self.publish_(content)
-        self.get_logger().info(f"Terminei de mandar a resposta")
+    def publish_command(self, bot_message):
+        matched = re.search(self.pattern, bot_message)
 
-    def publish_(self, content):
-        msg = String()
-        msg.data = content
-        self.publisher_.publish(msg)
-        self.get_logger().info(f"Publicando '{content}'")
+        if matched:
+            self.x = float(matched.group(1))
+            self.y = float(matched.group(2))
 
+            points = Float32MultiArray()
+            points.data.append(self.x)
+            points.data.append(self.y)
+
+            print(points)
+            
+            self.publisher_points.publish(points)
+        
+        else:
+            self.get_logger().info("Não encontrei os pontos")
+
+        print(f"[RESPONSE] [CHATBOT] {bot_message}")
+        
+    def run(self):
+        with gr.Blocks() as demo:
+            chatbot = gr.Chatbot()
+            msg = gr.Textbox()
+            clear = gr.ClearButton([msg, chatbot])
+
+            def respond(message, chat_history):
+                bot_message = ''
+                for s in self.chain.stream(message):
+                    bot_message += s.content
+
+                self.publish_command(bot_message)
+
+                chat_history.append((message, bot_message))
+                
+                return "", chat_history
+
+            msg.submit(respond, [msg, chatbot], [msg, chatbot])
+
+        demo.launch()
 
 def main(args=None):
     rclpy.init(args=args)
