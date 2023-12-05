@@ -1,0 +1,74 @@
+// app.component.scss
+$background-color: white;
+$chat-background-color: lightgray;
+$sent-message-color: lightred;
+$received-message-color: #E5E5EA;
+$text-color: black;
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $background-color;
+    color: $text-color;
+    font-family: 'Arial', sans-serif;
+
+    .chat-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: $chat-background-color;
+    }
+
+    .chat-messages {
+        flex-grow: 1;
+        padding: 10px;
+        overflow-y: auto;
+        background-color: $chat-background-color;
+
+        .message {
+            max-width: 60%;
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 20px;
+
+            &.sent {
+                background-color: $sent-message-color;
+                margin-left: auto;
+                color: white;
+            }
+
+            &.received {
+                background-color: $received-message-color;
+            }
+        }
+    }
+
+    .chat-input {
+        display: flex;
+        padding: 10px;
+        background-color: $chat-background-color;
+
+        input {
+            flex-grow: 1;
+            margin-right: 10px;
+            padding: 10px;
+            border: 1px solid $text-color;
+            border-radius: 20px;
+        }
+
+        button {
+            background-color: $sent-message-color;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($sent-message-color, 10%);
+            }
+        }
+    }
+}
