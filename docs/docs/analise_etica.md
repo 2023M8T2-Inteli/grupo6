@@ -29,13 +29,9 @@ Outro elemento vital é disponibilizar um recurso de Perguntas e Respostas (FAQ)
 
 ## Transparência e consentimento informado
 
-Para garantir total ciência das informações utilizadas no projeto, o Termo de Abertura de Projeto (TAPI) foi elaborado como documento formal que não apenas inicia o projeto, mas também estabelece claramente as autorizações e limitações concedidas pelo cliente.
+Com o objetivo de garantir que todas as partes interessadas no projeto estejam plenamente cientes das informações utilizadas, um Termo de Abertura de Projeto (TAPI) foi elaborado. Esse documento formaliza o início do projeto e estabelece as autorizações e limitações concedidas pelo cliente.
 
-Além disso, a transparência das atividades durante o desenvolvimento é enfatizada por meio de uma abordagem meticulosa de registro. Todos os processos, desde a concepção até a implementação, são documentados em tempo real e disponibilizados de forma acessível ao cliente. Essa prática permite que o cliente acompanhe de perto e em detalhes o progresso do projeto, compreendendo as etapas enquanto estão em andamento.
-
-Além do registro das atividades, a equipe implementa regularmente reuniões ou relatórios de progresso, onde são discutidos os avanços, desafios encontrados e quaisquer ajustes no escopo ou na abordagem. Essas interações são fundamentais para manter o cliente informado e possibilitar uma colaboração efetiva, permitindo que suas contribuições sejam consideradas durante todo o processo de desenvolvimento.
-
-A documentação detalhada não apenas oferece transparência, mas também serve como base para o consentimento informado. O cliente tem acesso claro e contínuo ao que está sendo feito, permitindo uma tomada de decisão informada e participativa ao longo do projeto.
+No que diz respeito à transparência das atividades realizadas durante o desenvolvimento, todos os processos são meticulosamente registrados em uma documentação acessível ao cliente em tempo real. Isso possibilita que o cliente acompanhe de perto o progresso e as etapas do projeto enquanto estão em andamento.
 
 ## Responsabilidade social
 
