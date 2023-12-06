@@ -15,12 +15,12 @@ e integrar a plataforma robótica (e o ROS) com modelos de processamento de ling
 A seguir, um resumo em português claro e conciso do que deve ser desenvolvido em 
 cada sprint.
 
-### Sprint 1 
+## Sprint 1 
 
 Entendimento do projeto. Aspectos de negócio, ética e usabilidade assim como a 
 elicitação de requisitos funcionais e não funcionais.
 
-### Sprint 2
+## Sprint 2
 
 Primeira entrega completa do projeto. O que isso significa? Significa uma versão 
 que o cliente pode usar tranquilamente, seguindo os preceitos do 
@@ -34,19 +34,21 @@ comandos para o robô;
 os comandos enviados pelo usuário e linkar com a ação adequada no robô; e
 4. Documentação e manual de usuário para essa versão do projeto.
 
-### Sprint 3
+<!-- TODO: Completar com as features de cada sprint -->
+
+## Sprint 3
 
 :::info
 Em construção. Volte mais tarde =D
 :::
 
-### Sprint 4
+## Sprint 4
 
 :::info
 Em construção. Volte mais tarde =D
 :::
 
-### Sprint 5
+## Sprint 5
 
 :::info
 Em construção. Volte mais tarde =D
