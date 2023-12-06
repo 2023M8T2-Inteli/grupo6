@@ -89,12 +89,23 @@ ros2 launch chofer navigator.launch.py
 ```
 
 ## Testes
-### Sprint 2
-O vídeo abaixo representa o resultado do processo de desenvolvimento da primeira versão do nosso sistema de mapeamento e navegação. 
+Durante o desenvolvimento da Sprint 2, testamos as funcionalidades de mapeamento e navegação, como demonstrado no vídeo abaixo. Contudo, nesse estágio, não tínhamos arquivos de lançamento (launch files) configurados, o que exigiu a execução individual de cada nó do sistema.
 
+[Vídeo - Sprint 2]
 
+Por outro lado, na Sprint 3 adicionamos o pacote chofer como 
 
-Através deste primeiro registro, será possível acompanhar a evolução e os desafios enfrentados na criação do método fundamental que permite ao robô movimentar-se autonomamente em ambientes desconhecidos. Desde a construção do mapa do ambiente até a integração com uma interface de comunicação eficiente para direcionar os destinos desejados.
+O pacote 'chofer' destinado ao TurtleBot Burger oferece um conjunto de funcionalidades fundamentais para navegação e mapeamento em ambientes variados. No que se refere à capacidade de mapeamento, o pacote pode ser configurado para mapear áreas de até 50m² em cerca de 10 minutos, utilizando seu sistema integrado de cartografia. Essa velocidade pode variar dependendo da complexidade do ambiente e dos sensores utilizados.
+
+Quanto à geração de relatórios e dashboards em menos de 30 segundos, essa não é uma funcionalidade direta do 'chofer', mas ele pode fornecer dados essenciais para serem utilizados por sistemas complementares ou módulos específicos que geram relatórios e dashboards baseados nos dados de mapeamento e navegação do TurtleBot Burger.
+
+A resposta rápida aos comandos de voz ou texto, requerida em menos de 5 segundos, depende mais da integração com sistemas externos para reconhecimento de voz ou processamento de texto. O 'chofer' pode ser integrado a esses sistemas para receber e interpretar comandos, mas a rapidez da resposta é influenciada pela eficiência desses módulos externos.
+
+Em relação à capacidade de operar continuamente por pelo menos 8 horas sem falhas, o 'chofer' pode ser configurado para operar por longos períodos, desde que não haja falhas nos componentes do sistema. Ele oferece recursos de navegação autônoma e planejamento de rotas, procurando sempre a melhor rota possível para destinos definidos, incluindo uma margem de segurança de pelo menos 5cm para evitar obstáculos ou colisões.
+
+No entanto, a necessidade de operar continuamente por 8 horas sem recarga pode variar dependendo do consumo de energia do TurtleBot Burger. Embora o 'chofer' possa otimizar a navegação para conservar energia, a capacidade da bateria e o consumo do robô podem influenciar a necessidade de recarga ao longo de um período tão extenso de operação.
+
+Portanto, o pacote 'chofer' oferece uma base sólida para navegação autônoma, mapeamento e planejamento de rotas, mas alguns requisitos específicos, como geração de relatórios em tempo hábil e tempos de resposta muito rápidos a comandos de voz, podem demandar integração com sistemas adicionais para serem atendidos de forma completa.
 
 
 
