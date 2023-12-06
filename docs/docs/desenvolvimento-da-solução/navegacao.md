@@ -91,9 +91,9 @@ ros2 launch chofer navigator.launch.py
 ## Testes
 Durante o desenvolvimento da Sprint 2, testamos as funcionalidades de mapeamento e navegação, como demonstrado no vídeo abaixo. Contudo, nesse estágio, não tínhamos arquivos de lançamento (launch files) configurados, o que exigiu a execução individual de cada nó do sistema.
 
-[Vídeo - Sprint 2]
+[Vídeo - Sprint 2](https://github.com/2023M8T2-Inteli/grupo6/blob/dev/docs/static/img/sprint2.mov)
 
-Por outro lado, na Sprint 3 adicionamos o pacote chofer como 
+Na Sprint 3, implementamos alterações no código para incluir um arquivo de lançamento (launch file) no pacote do chofer.
 
 O pacote 'chofer' destinado ao TurtleBot Burger oferece um conjunto de funcionalidades fundamentais para navegação e mapeamento em ambientes variados. No que se refere à capacidade de mapeamento, o pacote pode ser configurado para mapear áreas de até 50m² em cerca de 10 minutos, utilizando seu sistema integrado de cartografia. Essa velocidade pode variar dependendo da complexidade do ambiente e dos sensores utilizados.
 
