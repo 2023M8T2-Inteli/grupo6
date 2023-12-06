@@ -18,7 +18,7 @@ No cenário abordado, o TurtleBot3 é caracterizado por sua modularidade e flexi
 
 No contexto de nosso projeto, essa sequência de tecnologias estabelece uma base robusta para a automação e eficiência nas operações logísticas internas. A interação entre ROS 2, NAV2 e TurtleBot3 tem como objetivo impulsionar a navegação autônoma de robôs destinados à entrega de ferramentas, representando um avanço significativo na aplicação de tecnologias de última geração para aprimorar as operações industriais. Esta documentação destaca a complementaridade entre essas tecnologias, evidenciando como elas se entrelaçam para formar uma solução integrada e eficaz em consonância com os objetivos de nosso projeto.
 
-### Módulos
+### Solução
 O pacote de navegação e mapeamento, denominado 'chofer', é um conjunto integrado de ferramentas essenciais para o TurtleBot Burger dentro do workspace de mesmo nome, 'chofer'. Este pacote foi desenvolvido para oferecer funcionalidades fundamentais de mapeamento do ambiente e navegação autônoma do robô em diferentes cenários e ambientes. Compreendendo uma série de nós interconectados e arquivos de lançamento, o 'chofer' proporciona uma solução completa e versátil para a operação eficaz do TurtleBot Burger, permitindo que mapeie seu entorno de forma precisa e realize deslocamentos autônomos com segurança. Este pacote é crucial para capacitar o TurtleBot Burger a operar em ambientes diversos e complexos, oferecendo controle e precisão durante a exploração e a navegação.
 
 #### Pacote Chofer
