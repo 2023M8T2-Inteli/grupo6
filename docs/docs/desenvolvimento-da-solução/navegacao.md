@@ -19,19 +19,20 @@ No cenário abordado, o TurtleBot3 é caracterizado por sua modularidade e flexi
 No contexto de nosso projeto, essa sequência de tecnologias estabelece uma base robusta para a automação e eficiência nas operações logísticas internas. A interação entre ROS 2, NAV2 e TurtleBot3 tem como objetivo impulsionar a navegação autônoma de robôs destinados à entrega de ferramentas, representando um avanço significativo na aplicação de tecnologias de última geração para aprimorar as operações industriais. Esta documentação destaca a complementaridade entre essas tecnologias, evidenciando como elas se entrelaçam para formar uma solução integrada e eficaz em consonância com os objetivos de nosso projeto.
 
 ### Módulos
-Este projeto é dividido em dois workspaces localizados na pasta src. O primeiro workspace é dedicado ao mapeamento, enquanto o segundo lida com a navegação.
+O pacote de navegação e mapeamento, denominado 'chofer', é um conjunto integrado de ferramentas essenciais para o TurtleBot Burger dentro do workspace de mesmo nome, 'chofer'. Este pacote foi desenvolvido para oferecer funcionalidades fundamentais de mapeamento do ambiente e navegação autônoma do robô em diferentes cenários e ambientes. Compreendendo uma série de nós interconectados e arquivos de lançamento, o 'chofer' proporciona uma solução completa e versátil para a operação eficaz do TurtleBot Burger, permitindo que mapeie seu entorno de forma precisa e realize deslocamentos autônomos com segurança. Este pacote é crucial para capacitar o TurtleBot Burger a operar em ambientes diversos e complexos, oferecendo controle e precisão durante a exploração e a navegação.
 
-#### Mapeamento 
+#### Pacote Chofer
+O pacote 'chofer' é um conjunto de componentes cruciais para a navegação e controle do TurtleBot Burger, composto por vários arquivos-chave.
 
-#### Navegação 
-No ambiente de navegação, um pacote específico foi desenvolvido dentro do workspace. Esse pacote inclui um script em bash projetado para iniciar o Rviz, um visualizador 3D para ROS, utilizando um arquivo de mapa como argumento. Além disso, foram implementados quatro nós distintos:
+O `mapper.py` é um nó ROS essencial neste pacote. Responsável pelo mapeamento e navegação, ele permite interação com o teclado para realizar ações específicas durante a operação do robô. Ao inicializar, cria um thread para escutar as entradas do teclado, possibilitando que o usuário pressione a tecla 's' para salvar o mapa. A função keyboard_listener configura o terminal para leitura bruta, continua a ler o teclado indefinidamente e responde à tecla 's' acionando a função save_map, que executa um comando do sistema para salvar o mapa usando o pacote nav2_map_server. Esse nó é fundamental para o pacote 'chofer', permitindo ao operador salvar o mapa do ambiente durante a navegação do TurtleBot Burger.
 
-1. Um nó destinado a abrir um terminal de chatbot.
-2. Outro nó projetado para abrir um terminal responsável pela entrada de coordenadas.
-3. Um nó adicional encarregado de inicializar a pose do robô.
-4. Um nó para gerenciar a fila de pontos relacionados à navegação.
+Além disso, o pacote 'chofer' inclui o arquivo `mapper.launch.py`, que integra o mapper.py ao sistema de lançamento (launch system) do ROS 2. Este arquivo configura o lançamento do nó mapper juntamente com outros componentes necessários, como o lançamento do cartógrafo do TurtleBot Burger (turtlebot3_cartographer) e o controle de teleop via teclado (turtlebot3_teleop). Ao executar este lançamento, é possível iniciar o mapeamento do ambiente e controlar o robô com o teclado, facilitando a criação do mapa durante a operação.
 
-É relevante observar que o nó responsável pela inicialização da pose do robô é concebido de maneira efêmera, encerrando-se automaticamente após a publicação da pose. Em contraste, os outros nós permanecem ativos durante toda a interação do usuário, desempenhando papéis específicos no contexto da navegação. Essa arquitetura proporciona uma integração eficiente e funcional para o controle e visualização do robô em seu ambiente.
+Por outro lado, temos o arquivo `navigator.py`, outro nó crucial do pacote 'chofer'. Responsável por aceitar comandos de waypoints através do tópico /waypoints, guia o TurtleBot Burger até pontos específicos no mapa. Este nó utiliza a biblioteca rclpy para se comunicar com o sistema ROS 2. Ao ser inicializado, instancia a classe BasicNavigator do pacote nav2_simple_commander para controlar a navegação básica do robô. Recebe mensagens do tópico /waypoints, interpreta os dados como pares de coordenadas (x, y) representando destinos no mapa e, com base nessas coordenadas, guia o robô até o ponto desejado. Essencial para a capacidade de navegação autônoma do TurtleBot Burger, este nó contribui significativamente para a precisão de movimento do robô no ambiente.
+
+O `navigator.launch.py`, por sua vez, é um arquivo de lançamento que integra o navigator.py ao sistema de lançamento do ROS 2. Ao executar este lançamento, o nó navigator é iniciado juntamente com o turtlebot3_navigation2, que configura a navegação do TurtleBot Burger. Isso permite ao robô receber comandos de navegação por waypoints e realizar movimentos precisos no ambiente, facilitando a sua capacidade de navegar autonomamente pelo ambiente mapeado.
+
+Esses arquivos e nós, em conjunto, compõem o pacote 'chofer', fornecendo funcionalidades cruciais para o mapeamento, navegação e controle do TurtleBot Burger no ambiente.
 
 **Execução**
 
