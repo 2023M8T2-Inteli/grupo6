@@ -1,0 +1,7 @@
+python-dotenv
+pypdf
+langchain
+tiktoken
+faiss-gpu
+openai-whisper
+gtts #talvez
