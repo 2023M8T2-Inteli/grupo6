@@ -5,6 +5,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import ThisLaunchFileDir
 from launch.substitutions import LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory
+import os
 
 def generate_launch_description():
     # Get the package directories
@@ -27,7 +28,6 @@ def generate_launch_description():
     # Include Launch Descriptions
     navigation2_launch = IncludeLaunchDescription(navigation2_launch_file)
     gazebo_launch = IncludeLaunchDescription(gazebo_launch_file)
-    bringup_launch = IncludeLaunchDescription(bringup_launch_file)
     movement_launch = IncludeLaunchDescription(movement_launch_file)
 
     # Create the launch description and populate

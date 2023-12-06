@@ -1,7 +1,7 @@
 #! /bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import Float32MultiArray, String
 import re
 
 from langchain.chat_models import ChatOpenAI
@@ -25,7 +25,12 @@ class LLMNode(Node):
             msg_type = Float32MultiArray,
             topic = '/waypoints',
             qos_profile=10)
-
+        
+        self.publisher_speech = self.create_publisher(
+            msg_type = String,
+            topic = '/chatbot',
+            qos_profile=10)
+        
         self.load()
 
         self.run()
@@ -92,8 +97,12 @@ class LLMNode(Node):
                 bot_message = ''
                 for s in self.chain.stream(message):
                     bot_message += s.content
+                
+                speech = String()
+                speech.data = bot_message
 
                 self.publish_command(bot_message)
+                self.publisher_speech.publish(speech)
 
                 chat_history.append((message, bot_message))
                 
