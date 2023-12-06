@@ -1,15 +1,18 @@
 ---
-sidebar_position: 6
-slug: '/navegacao'
+sidebar_position: 5
+slug: 'solucao/navegacao'
 ---
 
 
 
 # Sistema de localização e mapeamento simultâneo
+
 O sistema de mapeamento e navegação enfoca o procedimento essencial que capacita um robô a movimentar-se de maneira autônoma em um ambiente desconhecido. Inicialmente, abordaremos o método pelo qual o robô constrói um mapa do ambiente ao seu redor, identificando obstáculos e possíveis trajetos. Em seguida, exploraremos a relevância de uma interface de comunicação eficiente que capacita os usuários a especificar destinos nos quais desejam que o robô se desloque. Essa interface organiza esses destinos em uma sequência lógica e os transmite ao robô na ordem adequada. A integração fluida entre o mapeamento e a comunicação é crucial para a autonomia do robô. Abaixo, detalharemos cada etapa desse processo, elucidando como cada componente contribui para a operação autônoma eficiente do robô.
 
 ## Desenvolvimento
+
 ### Tecnologias
+
 As principais tecnologias utilizadas para a construção de um veículo autonômo foi uma combinação entre o ROS 2 (Robot Operating System 2), NAV2 (Navigation Stack 2) e TurtleBot3, que podem ser aplicadas em uma implementação de navegação autônoma em ambientes industriais. 
 
 O ROS 2 desempenha um papel essencial como sistema operacional para robôs, proporcionando uma base sólida para o desenvolvimento. Integrado ao ecossistema ROS 2, o NAV2 complementa essa estrutura ao fornecer recursos avançados de navegação, que abrangem algoritmos de mapeamento, localização e planejamento de trajetória. Essa sinergia entre o ROS 2 e o NAV2 estabelece uma plataforma abrangente e robusta, impulsionando eficazmente o desenvolvimento de sistemas autônomos com capacidades avançadas de navegação.
@@ -19,9 +22,11 @@ No cenário abordado, o TurtleBot3 é caracterizado por sua modularidade e flexi
 No contexto de nosso projeto, essa sequência de tecnologias estabelece uma base robusta para a automação e eficiência nas operações logísticas internas. A interação entre ROS 2, NAV2 e TurtleBot3 tem como objetivo impulsionar a navegação autônoma de robôs destinados à entrega de ferramentas, representando um avanço significativo na aplicação de tecnologias de última geração para aprimorar as operações industriais. Esta documentação destaca a complementaridade entre essas tecnologias, evidenciando como elas se entrelaçam para formar uma solução integrada e eficaz em consonância com os objetivos de nosso projeto.
 
 ### Solução
+
 O pacote de navegação e mapeamento, denominado 'chofer', é um conjunto integrado de ferramentas essenciais para o TurtleBot Burger dentro do workspace de mesmo nome, 'chofer'. Este pacote foi desenvolvido para oferecer funcionalidades fundamentais de mapeamento do ambiente e navegação autônoma do robô em diferentes cenários e ambientes. Compreendendo uma série de nós interconectados e arquivos de lançamento, o 'chofer' proporciona uma solução completa e versátil para a operação eficaz do TurtleBot Burger, permitindo que mapeie seu entorno de forma precisa e realize deslocamentos autônomos com segurança. Este pacote é crucial para capacitar o TurtleBot Burger a operar em ambientes diversos e complexos, oferecendo controle e precisão durante a exploração e a navegação.
 
 #### Pacote Chofer
+
 O pacote 'chofer' é um conjunto de componentes cruciais para a navegação e controle do TurtleBot Burger, composto por vários arquivos-chave.
 
 O `mapper.py` é um nó ROS essencial neste pacote. Responsável pelo mapeamento e navegação, ele permite interação com o teclado para realizar ações específicas durante a operação do robô. Ao inicializar, cria um thread para escutar as entradas do teclado, possibilitando que o usuário pressione a tecla 's' para salvar o mapa. 
@@ -106,8 +111,3 @@ Em relação à capacidade de operar continuamente por pelo menos 8 horas sem fa
 No entanto, a necessidade de operar continuamente por 8 horas sem recarga pode variar dependendo do consumo de energia do TurtleBot Burger. Embora o 'chofer' possa otimizar a navegação para conservar energia, a capacidade da bateria e o consumo do robô podem influenciar a necessidade de recarga ao longo de um período tão extenso de operação.
 
 Portanto, o pacote 'chofer' oferece uma base sólida para navegação autônoma, mapeamento e planejamento de rotas, mas alguns requisitos específicos, como geração de relatórios em tempo hábil e tempos de resposta muito rápidos a comandos de voz, podem demandar integração com sistemas adicionais para serem atendidos de forma completa.
-
-
-
-
-

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 6
-slug: '/navegacao'
+sidebar_position: 3
+slug: '/solucao/chatbot'
 ---
 
 
@@ -20,4 +20,4 @@ A intenção é desvincular os elementos do sistema, evitando a dependência de 
 
 <p align="center"> Script de chatbot usando subscriber e regex </p>
 
-![Chatbot](../static/img/chatbot.png)
+![Código do chatbot](../../static/img/chatbot.png)
