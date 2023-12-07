@@ -1,4 +1,4 @@
-const database = require('../database/db');
+const database = require('../../database/db');
 
 const getChat = async (req, res) => {
     try {

@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/chat', chatRouter);
+app.use('/components', componentsRouter);
 
 // Start the server
 app.listen(port, () => {

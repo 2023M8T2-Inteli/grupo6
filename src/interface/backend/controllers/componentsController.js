@@ -1,4 +1,4 @@
-const components = require('../database/db.components');
+const components = require('../../database/db.components');
 
 const getComponents = async (req, res) => {
     try {
