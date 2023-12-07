@@ -23,10 +23,6 @@ const updateComponents = async (component, new_description=null, new_quantity=nu
     console.log(old_component);
     const old_description = old_component.description;
     const old_quantity = old_component.quantity;
-    console.log(old_description);
-    console.log(old_quantity);
-    console.log(new_description);
-    console.log(new_quantity);
 
     if (!new_description) new_description = old_description;
     if (!new_quantity) new_quantity = old_quantity;
