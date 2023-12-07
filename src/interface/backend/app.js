@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 
 const chatRouter = require('./routes/chatRouter');
+const componentsRouter = require('./routes/componentsRouter');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

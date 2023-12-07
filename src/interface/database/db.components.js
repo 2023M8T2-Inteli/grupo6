@@ -1,16 +1,18 @@
 const { supabase } = require('./db');
 
-getComponents = async (id=null) => {
-    const { data, error } = await supabase.from('components').select()
-    switch (!!id) {
-        case true:
-            return data;
-        default:
-            return data;
+getComponents = async (component=null) => {
+    if (component) {
+        const { data, error } = await supabase.from('components').select().eq('component', component)
+        return data;  
     }
+    const { data, error } = await supabase.from('components').select()
+    
+    return data;
 }
 
-postComponents = async (component) => {
-    const { data, error } = await supabase.from('components').insert([component])
-    return data;
+postComponents = async (component, description) => {
+    const { error } = await supabase.from('components').insert([
+        {component: component, description: description}
+    ])
+    return error;
 }
