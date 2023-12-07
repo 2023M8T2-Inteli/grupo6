@@ -1,8 +1,8 @@
 const components = require('../../database/db.components');
 
 const getComponents = async (req, res) => {
-    const { component } = req.body;
-    console.log(req.body);
+    if (req.params) console.log(req.params);
+    const { component } = req.params;
     
     try {
         const response = await components.getComponents(component);
@@ -13,11 +13,23 @@ const getComponents = async (req, res) => {
 }
 
 const postComponents = async (req, res) => {
-    const { component, description } = req.body;
     console.log(req.body);
+    const { component, description, quantity } = req.body;
     
     try {
-        const response = await components.postComponents(component, description);
+        const response = await components.postComponents(component, description, quantity);
+        res.json(response);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
+const updateComponents = async (req, res) => {
+    console.log(req.body);
+    const { component, new_description, new_quantity } = req.body;
+    
+    try {
+        const response = await components.updateComponents(component, new_description, new_quantity);
         res.json(response);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -26,5 +38,6 @@ const postComponents = async (req, res) => {
 
 module.exports = {
     getComponents,
-    postComponents
+    postComponents,
+    updateComponents
 };

@@ -8,21 +8,38 @@ const getComponents = async (component=null) => {
         return data;  
     }
     const { data, error } = await supabase.from(table).select()
-    
     return data;
 }
 
-const postComponents = async (component, description) => {
+const postComponents = async (component, description, quantity) => {
     const { error } = await supabase.from(table).insert([
-        {component: component, description: description}
+        {component: component, description: description, quantity: quantity}
     ])
+    return error;
+}
 
-    if (error) return error;
-    
-    return $`Component ${component} added successfully.`;
+const updateComponents = async (component, new_description=null, new_quantity=null) => {
+    const old_component = await getComponents(component);
+    console.log(old_component);
+    const old_description = old_component.description;
+    const old_quantity = old_component.quantity;
+    console.log(old_description);
+    console.log(old_quantity);
+    console.log(new_description);
+    console.log(new_quantity);
+
+    if (!new_description) new_description = old_description;
+    if (!new_quantity) new_quantity = old_quantity;
+
+    const { error } = await supabase.from(table).update([
+        {description: new_description, quantity: new_quantity}
+    ]).eq('component', component)
+
+    return error;
 }
 
 module.exports = {
     getComponents,
-    postComponents
+    postComponents,
+    updateComponents
 };
