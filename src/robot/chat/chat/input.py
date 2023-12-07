@@ -25,7 +25,7 @@ class InputNode(Node):
         msg = String()
         msg.data = command
         self.publisher_.publish(msg)
-        self.publisher.log.publish(msg)
+        self.publisher_log.publish(msg)
         self.get_logger().info(f"Publicando '{command}'")
 
 def main(args=None):
