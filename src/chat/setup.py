@@ -23,10 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "interface=chat.interface:main",
-            "input=chat.input:main",
             "llm=chat.llm:main",
-            "output=chat.output:main",
+            "waypoints=chat.waypoints:main",
             "stt=chat.stt:main",
             "tts=chat.tts:main",
         ],

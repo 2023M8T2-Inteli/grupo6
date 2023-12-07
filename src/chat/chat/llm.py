@@ -18,17 +18,10 @@ import gradio as gr
 class LLMNode(Node):
     def __init__(self):
         super().__init__('llm_node')
-
-        self.pattern = r"\(\s*\d+(\.\d+)?\s*,\s*\d+(\.\d+)?\s*\)"
-
-        self.publisher_points = self.create_publisher(
-            msg_type = Float32MultiArray,
-            topic = '/waypoints',
-            qos_profile=10)
         
-        self.publisher_speech = self.create_publisher(
+        self.publisher_ = self.create_publisher(
             msg_type = String,
-            topic = '/chatbot',
+            topic = '/output',
             qos_profile=10)
         
         self.load()
@@ -66,49 +59,35 @@ class LLMNode(Node):
             | prompt
             | model
         )
+    
+    def send_points(self, response):
+        output = String()
+        output.data = response
 
-    def publish_command(self, bot_message):
-        matched = re.search(self.pattern, bot_message)
+        self.publisher_.publish(output)
 
-        if matched:
-            self.x = float(matched.group(1))
-            self.y = float(matched.group(2))
-
-            points = Float32MultiArray()
-            points.data.append(self.x)
-            points.data.append(self.y)
-
-            print(points)
+    def respond(self, text, audio, chat_history=[]):
+        response = ''
+        if text:
+            for s in self.chain.stream(text):
+                response += s.content
             
-            self.publisher_points.publish(points)
-        
-        else:
-            self.get_logger().info("Não encontrei os pontos")
+            self.send_points(response)
 
-        print(f"[RESPONSE] [CHATBOT] {bot_message}")
-        
+            chat_history.append((text, audio))
+
+        elif audio:
+            response = "Audio"
+            chat_history.append(("audio", response))
+
     def run(self):
         with gr.Blocks() as demo:
             chatbot = gr.Chatbot()
-            msg = gr.Textbox()
-            clear = gr.ClearButton([msg, chatbot])
-
-            def respond(message, chat_history):
-                bot_message = ''
-                for s in self.chain.stream(message):
-                    bot_message += s.content
-                
-                speech = String()
-                speech.data = bot_message
-
-                self.publish_command(bot_message)
-                self.publisher_speech.publish(speech)
-
-                chat_history.append((message, bot_message))
-                
-                return "", chat_history
-
-            msg.submit(respond, [msg, chatbot], [msg, chatbot])
+            with gr.Row():
+                msg = gr.Textbox()
+                mic = gr.Microphone()
+            btn = gr.Button(value='Submit')
+            btn.click(self.respond, inputs=[msg, mic], outputs=[chatbot])
 
         demo.launch()
 
