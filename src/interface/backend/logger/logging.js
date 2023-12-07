@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const log = (message) => {
+const logging = (message) => {
     const currentDate = new Date();
     const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
     const formattedTime = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
@@ -16,6 +16,6 @@ const log = (message) => {
     });
 };
 
-// Example usage:
-log('This is a log message.');
-
+module.exports = {
+    logging,
+}
