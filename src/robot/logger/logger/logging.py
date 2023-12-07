@@ -25,7 +25,7 @@ class LoggerNode(Node):
         Registra mensagens de log com as informações recebidas.
         """
         self.get_logger().info(f'Registrando log: "{msg.data}"')
-        requests.post('http://localhost:3000/log',json={'murilo':msg.data})
+        requests.post('http://localhost:3000/log',json={'log':msg.data})
 
 def main(args=None):
     """
