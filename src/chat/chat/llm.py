@@ -81,7 +81,6 @@ class LLMNode(Node):
         return transcript
 
     def respond(self, text, audio, chat_history=[]):
-        print(text)
         response = ''
         if text:
             for s in self.chain.stream(text):
