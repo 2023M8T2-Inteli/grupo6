@@ -21,10 +21,10 @@ class TTSNode(Node):
 
     def listener_callback(self, msg):
         self.get_logger().info(f"Vou falar: {msg.data}")
-        self.audio = self.text_to_speech(self.message)
+        self.audio = self.text_to_speech(msg.data)
         self.play_audio(self.audio)
     
-    def text_to_speech(self, text, language='en'):
+    def text_to_speech(self, text, language='pt-br'):
         self.tts = gTTS(text, lang=language)
         self.audio_file = "speech.mp3"
         self.tts.save(self.audio_file)
@@ -43,7 +43,7 @@ def main(args=None):
     rclpy.shutdown()
 
 if __name__ == "__main__":
-    tts = gTTS(text="Hello World!", lang='en')
+    tts = gTTS(text="Hello World!", lang='PT-BR')
     audio_file = "speech.mp3"
     tts.save(audio_file)
     os.system(f"mpg321 {audio_file}")

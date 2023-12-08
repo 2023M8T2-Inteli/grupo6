@@ -6,6 +6,7 @@ import re
 import soundfile as sf
 import numpy as np
 from openai import OpenAI
+import whisper
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
@@ -23,11 +24,18 @@ class LLMNode(Node):
         super().__init__('llm_node')
 
         self.client = OpenAI()
+
+        # self.model = whisper.load_model("large")
         
         self.publisher_ = self.create_publisher(
             msg_type = String,
             topic = '/output',
             qos_profile=10)
+
+        # self.publisher_audio = self.create_publisher(
+        #     msg_type = String,
+        #     topic = '/audio',
+        #     qos_profile=10)
         
         self.load()
 
@@ -89,6 +97,7 @@ class LLMNode(Node):
             
             self.send_points(response)
 
+            print(response)
             chat_history.append((text, response))
 
             return chat_history
