@@ -1,13 +1,21 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { Text, View } from "react-native";
+import { LogBox, Text, View } from "react-native";
+
+import { Routes } from "./routes";
+
+import { NavigationContainer } from "@react-navigation/native";
+// import { ContextProvider } from "./context/context";
 
 export default function App() {
+  // LogBox.ignoreAllLogs();
+
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text className="text-black text-xs">Tonho is better!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <View className="flex ">
+        <Routes />
+        <Text>I'm app.js</Text>
+        <StatusBar hidden={true} />
+      </View>
+    </NavigationContainer>
   );
 }
