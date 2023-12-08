@@ -7,6 +7,7 @@ const componentsRouter = require('./routes/componentsRouter');
 const logRouter = require('./routes/logRouter');
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/chat', chatRouter);
