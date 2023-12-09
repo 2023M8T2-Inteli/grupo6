@@ -1,12 +1,25 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home } from "./pages/home";
-
+import { ChatStack } from "./pages/chatStack";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
 
 export function Routes() {
   return (
-    <Tab.Navigator initialRouteName="Home">
-      <Tab.Screen name="Home" component={Home} />
+    <Tab.Navigator initialRouteName="Chat">
+      <Tab.Screen
+        name="Chat"
+        component={ChatStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="robot-outline"
+              size={24}
+              color="black"
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
