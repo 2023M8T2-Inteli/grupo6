@@ -1,31 +1,12 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Tabs } from "./pages/tab.jsx";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home } from "./pages/home";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export function Routes() {
   return (
-    <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={({ route }) => ({
-        headerBackVisible: false,
-        title: "",
-      })}
-    >
-      <Stack.Screen
-        name="Start"
-        component={Tabs}
-        options={{
-          headerStyle: { backgroundColor: "black" },
-          headerTintColor: "white",
-        }}
-      />
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen name="Home" component={Home} />
+    </Tab.Navigator>
   );
 }
