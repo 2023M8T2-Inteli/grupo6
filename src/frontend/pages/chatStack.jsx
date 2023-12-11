@@ -9,8 +9,7 @@ export function ChatStack() {
   return (
     <Stack.Navigator
       screenOptions={() => ({
-        headerBackVisible: false,
-        title: "",
+        title: "Chauffeur",
       })}
     >
       <Stack.Screen
