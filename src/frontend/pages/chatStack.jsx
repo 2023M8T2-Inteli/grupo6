@@ -18,11 +18,7 @@ export function ChatStack() {
         component={Home}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name="ChatScreen"
-        component={Chat}
-        options={{ headerShown: false }}
-      />
+      <Stack.Screen name="ChatScreen" component={Chat} />
     </Stack.Navigator>
   );
 }
