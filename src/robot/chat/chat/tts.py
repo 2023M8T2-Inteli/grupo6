@@ -7,28 +7,24 @@ import os
 
 class TTSNode(Node):
 
-    def __init__(self, timer_period=0.2):
+    def __init__(self):
         super().__init__('tts_node')
-        self.subscription_ = self.create_subscription(msg_type=String,topic="/chatbot",callback=self.chatbot_callback,qos_profile=10)
 
-        self.get_logger().info("Ouvindo ao /chatbot")
+        self.subscription_ = self.create_subscription(
+            msg_type=String,
+            topic="/output",
+            callback=self.listener_callback,
+            qos_profile=10
+        )
 
-        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.get_logger().info("Ouvindo ao /output")
 
-        self.message = None
-
-    def timer_callback(self):
-        if self.message:
-            self.get_logger().info(f"Vou falar: {self.message}")
-            self.audio = self.text_to_speech(self.message)
-            self.play_audio(self.audio)
-            self.message = None
-
-    def chatbot_callback(self, msg):
-        self.message = msg.data
-        self.get_logger().info(f"Recebi: {self.message}")
+    def listener_callback(self, msg):
+        self.get_logger().info(f"Vou falar: {msg.data}")
+        self.audio = self.text_to_speech(msg.data)
+        self.play_audio(self.audio)
     
-    def text_to_speech(self, text, language='en'):
+    def text_to_speech(self, text, language='pt-br'):
         self.tts = gTTS(text, lang=language)
         self.audio_file = "speech.mp3"
         self.tts.save(self.audio_file)
@@ -47,8 +43,7 @@ def main(args=None):
     rclpy.shutdown()
 
 if __name__ == "__main__":
-    tts = gTTS(text="Hello World!", lang='en')
+    tts = gTTS(text="Hello World!", lang='PT-BR')
     audio_file = "speech.mp3"
     tts.save(audio_file)
     os.system(f"mpg321 {audio_file}")
-        

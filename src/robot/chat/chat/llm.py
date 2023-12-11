@@ -1,7 +1,11 @@
 #! /bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import Float32MultiArray, String
+import re
+import soundfile as sf
+import numpy as np
+from openai import OpenAI
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
@@ -11,20 +15,23 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from dotenv import load_dotenv
+import gradio as gr
 
 
 class LLMNode(Node):
     def __init__(self):
         super().__init__('llm_node')
-        self.subscription_ = self.create_subscription(
-            msg_type=String,
-            topic="/llm",
-            callback=self.listener_callback,
-            qos_profile=10
-        )
-        self.publisher_ = self.create_publisher(msg_type=String, topic="/chatbot", qos_profile=10)
-        self.publisher_log = self.create_publisher(msg_type=String, topic="log_register", qos_profile=10)
+
+        self.client = OpenAI()
+        
+        self.publisher_ = self.create_publisher(
+            msg_type = String,
+            topic = '/output',
+            qos_profile=10)
+        
         self.load()
+
+        self.run()
 
         self.get_logger().info("LLM Node created successfully")
 
@@ -57,22 +64,63 @@ class LLMNode(Node):
             | prompt
             | model
         )
+    
+    def send_points(self, response):
+        output = String()
+        output.data = response
 
-    def listener_callback(self, msg):
-        self.get_logger().info(f"Recebi '{msg.data}' ")
-        content = ""
-        for s in self.chain.stream(msg.data):
-            content += s.content
-        self.publish_(content)
-        self.get_logger().info(f"Terminei de mandar a resposta")
+        self.publisher_.publish(output)
 
-    def publish_(self, content):
-        msg = String()
-        msg.data = content
-        self.publisher_.publish(msg)
-        self.publisher_log.publish(msg)
-        self.get_logger().info(f"Publicando '{content}'")
+    def transcribe_audio(self, file_path):
+        audio_file = open(file_path, "rb")
+        transcript = self.client.audio.translations.create(
+            model="whisper-1", 
+            file=audio_file,
+            response_format="text"
+        )
+        return transcript
 
+    def respond(self, text, audio, chat_history=[]):
+        response = ''
+        if text:
+            for s in self.chain.stream(text):
+                response += s.content
+            
+            self.send_points(response)
+
+            chat_history.append((text, response))
+
+            return chat_history
+
+        elif audio:
+            transcribed = self.transcribe_audio(audio)
+
+            for s in self.chain.stream(transcribed):
+                response += s.content
+
+            self.send_points(response)
+
+            chat_history.append((transcribed, response))
+
+            return chat_history
+        
+        else:
+            response = 'Não entendi'
+
+            chat_history.append(('', response))
+
+            return chat_history
+
+    def run(self):
+        with gr.Blocks() as demo:
+            chatbot = gr.Chatbot()
+            with gr.Row():
+                msg = gr.Textbox()
+                mic = gr.Audio(type='filepath')
+            btn = gr.Button(value='Submit')
+            btn.click(self.respond, inputs=[msg, mic], outputs=[chatbot])
+
+        demo.launch()
 
 def main(args=None):
     rclpy.init(args=args)
