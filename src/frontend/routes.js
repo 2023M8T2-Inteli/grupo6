@@ -14,7 +14,7 @@ export function Routes() {
       initialRouteName="Chat"
       screenOptions={() => ({
         tabBarStyle: {
-          backgroundColor: "white",
+          backgroundColor: "#F4F4F4",
           paddingBottom: 5,
           paddingTop: 5,
         },

@@ -1,4 +1,4 @@
-import { View, Image, Text, Button } from "react-native";
+import { View, Image, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
@@ -23,12 +23,15 @@ export function Home() {
           </Text>
         </View>
         <View>
-          <Button
-            title="Start Chat"
+          <Pressable
             color="#E9344E"
             className="text-4xl"
             onPress={() => navigation.navigate("ChatScreen")}
-          />
+          >
+            <Text className="bg-[#E9344E] text-white text-4xl p-4 rounded-2xl px-12 font-thin">
+              Start Chat
+            </Text>
+          </Pressable>
         </View>
       </View>
     </View>
