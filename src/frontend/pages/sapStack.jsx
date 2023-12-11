@@ -10,14 +10,14 @@ export function SapStack() {
     <Stack.Navigator
       initialRouteName="SapScreen"
       screenOptions={() => ({
-        headerBackVisible: false,
-        title: "",
+        headerBackVisible: true,
+        title: "SAP",
       })}
     >
       <Stack.Screen
         name="SapScreen"
         component={SapHome}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <Stack.Screen name="ItemScreen" component={SapItems} />
     </Stack.Navigator>
