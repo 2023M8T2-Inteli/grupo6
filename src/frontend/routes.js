@@ -4,22 +4,34 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { ChatStack } from "./pages/chatStack";
 import { SapStack } from "./pages/sapStack";
+import { SavedChatStack } from "./pages/savedChatStack";
 
 const Tab = createBottomTabNavigator();
 
 export function Routes() {
   return (
-    <Tab.Navigator initialRouteName="Chat">
+    <Tab.Navigator
+      initialRouteName="Chat"
+      screenOptions={() => ({
+        tabBarStyle: {
+          backgroundColor: "white",
+          paddingBottom: 5,
+          paddingTop: 5,
+        },
+        tabBarActiveTintColor: "#E9344E",
+        tabBarInactiveTintColor: "black",
+      })}
+    >
       <Tab.Screen
         name="Chat"
         component={ChatStack}
         options={{
           headerShown: false,
-          tabBarIcon: () => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="robot-love-outline"
               size={24}
-              color="#E9344E"
+              color={color}
             />
           ),
         }}
@@ -29,11 +41,25 @@ export function Routes() {
         component={SapStack}
         options={{
           headerShown: false,
-          tabBarIcon: () => (
-            <Ionicons
-              name="file-tray-stacked-outline"
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="store-outline"
               size={24}
-              color="black"
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Saved"
+        component={SavedChatStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="pin-outline"
+              size={24}
+              color={color}
             />
           ),
         }}
