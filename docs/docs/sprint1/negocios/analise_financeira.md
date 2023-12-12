@@ -218,11 +218,11 @@ Vamos usar os dados fornecidos:
 
 Este é o cálculo do ponto de equilíbrio:
 
-$$ \text{Ponto de equilíbrio (em anos)} = \frac{\text{Investimento Total}}{\text{Economia Anual}} $$
+Ponto de equilíbrio (em anos) = Investimento Total / Economia Anual
 
-$$ \text{Ponto de equilíbrio} = \frac{\$1.901.625}{\$412.750} $$
+Ponto de equilíbrio = U$1.901.625 / U$412.750
 
-$$ \text{Ponto de equilíbrio} \approx 4,6 \text{ anos} $$
+O ponto de equilíbrio é, aproximadamente, 4,6 anos.
 
 
 Portanto, com base nos dados e estimativas fornecidos, o ponto de equilíbrio para o projeto de automação do armazém é de aproximadamente **4,6 anos**. Após esse período, a empresa começaria a perceber economias líquidas do projeto.
