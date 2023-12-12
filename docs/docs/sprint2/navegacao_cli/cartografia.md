@@ -54,7 +54,25 @@ Para acionar o nó utilizado na navegação, empregue o seguinte comando:
 ros2 run movement navigation
 ```
 
+## Demonstração do mapeamento
+
+### Circuito real x Circuito mapeado
+
+![circuito real](../../../static/img/circuito_real.jpg)
+![circuito mapeado](../../../static/img/circuito_mapeado.png)
+
 ## Demonstração da navegação
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VTZQujUkQRs?si=LM92U75XIe5w-iH_" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Checklist de requisitos
+
+Os seguintes requisitos não funcionais foram atendidos corretamente pela implementação da Sprint 2:
+
+-  O sistema deve ser capaz de mapear um espaço de 50m² em cerca de 10 minutos
+- O robô deve encontrar a melhor rota para chegar nos seus destinos em menos de 20 minutos
+
+Contudo, é importante destacar que o seguinte requisito foi violado, uma vez que o robô apresentou dificuldades em se manter distante de obstáculos. Futuramente, a remoção do LCD, atualmente conectado a carcaça do robô, deve auxiliar na solução dessa questão, já que está causando interferência nos comandos ao robô.
+
+- O robô deve ter uma margem de segurança em suas rotas de, pelo menos, 5cm
 
