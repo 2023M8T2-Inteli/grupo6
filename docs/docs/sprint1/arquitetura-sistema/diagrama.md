@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-slug: '/arquitetura'
+sidebar_position: 5
+slug: '/sprint1/arquitetura/diagrama'
 ---
 
 # Descrição da Arquitetura do Sistema
@@ -16,7 +16,7 @@ As arquiteturas foram divididas da seguinte forma:
 
 Como o próprio termo remete, a arquitetura conceitual é focada em entender o conceito de como a aplicação irá funcionar. O grupo optou por fazer a construção de uma arquitetura dessa forma pelo seu nível de abstração, esse tipo de arquitetura, diferentemnete das duas seguintes não fala sobre tecnologias ou a parte técnica da aplicação, mas sim dos módulos que estarão presentes na mesma e suas respectivas responsabilidades.
 
-![Arquitetura Conceitual](../../static/img/arquitetura_conceitual.png)
+![Arquitetura Conceitual](../../../static/img/arquitetura_conceitual.png)
 
 O fluxo interno seguiria o seguinte percurso:
 
