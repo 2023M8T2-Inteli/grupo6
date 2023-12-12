@@ -69,7 +69,8 @@ ros2 run movement navigation
 
 Os seguintes requisitos não funcionais foram atendidos corretamente pela implementação da Sprint 2:
 
--  O sistema deve ser capaz de mapear um espaço de 50m² em cerca de 10 minutos
+- O sistema deve ser capaz de mapear um espaço de 50m² em cerca de 10 minutos
+- A lista com as peças solicitadas deve ser gerada em menos de 5 segundos
 - O robô deve encontrar a melhor rota para chegar nos seus destinos em menos de 20 minutos
 
 Contudo, é importante destacar que o seguinte requisito foi violado, uma vez que o robô apresentou dificuldades em se manter distante de obstáculos. Futuramente, a remoção do LCD, atualmente conectado a carcaça do robô, deve auxiliar na solução dessa questão, já que está causando interferência nos comandos ao robô.
