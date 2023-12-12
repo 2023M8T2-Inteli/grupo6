@@ -5,6 +5,8 @@ slug: '/sprint1/ux/personas'
 
 # Personas
 
+Personas são representações fictícias de segmentos específicos da audiência, detalhando características e comportamentos. Sua importância está em orientar estratégias de design e marketing, oferecendo uma compreensão profunda das necessidades dos usuários, contribuindo para a criação de soluções mais alinhadas e eficazes.
+
 **Persona 1: João, o Técnico de Manutenção**
 
 - **Grupo demográfico:** 
