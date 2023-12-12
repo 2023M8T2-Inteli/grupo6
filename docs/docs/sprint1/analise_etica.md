@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: '/sprint1/analise_etica'
 ---
 
-# Análise de impacto ético
+# Análise de Impacto Ético
 
 A seguir, serão explorados os impactos da solução em cinco dimensões diversas, abrangendo questões sociais e ambientais.
 

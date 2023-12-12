@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: '/sprint1/arquitetura/estrutura_dados'
 ---
 
-# Estrutura de dados
+# Estrutura de Dados
 
 A escolha adequada de estruturas de dados e padrões de design desempenha um papel crítico na arquitetura de software, sendo de extrema importância para o projeto. Esses elementos são fundamentais porque influenciam vários aspectos chave do desenvolvimento de software, contribuindo para a eficiência, manutenibilidade, escalabilidade e reusabilidade do sistema.
 
