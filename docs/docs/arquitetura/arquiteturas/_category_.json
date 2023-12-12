@@ -1,8 +1,0 @@
-{
-    "label": "Arquiteturas",
-    "position": 1,
-    "link": {
-      "type": "generated-index",
-      "description": "Essa seção da documentação está destinada a arquitetura do sistema. Atualmente, existem duas versões da arquitetura, detalhadas nos tópicos seguintes."
-    }
-  }
