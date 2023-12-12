@@ -29,13 +29,11 @@ Outro elemento vital é disponibilizar um recurso de Perguntas e Respostas (FAQ)
 
 ## Transparência e consentimento informado
 
-Para garantir total ciência das informações utilizadas no projeto, o Termo de Abertura de Projeto (TAPI) foi elaborado como documento formal que não apenas inicia o projeto, mas também estabelece claramente as autorizações e limitações concedidas pelo cliente.
+Para assegurar total transparência nas informações do projeto, o Termo de Abertura de Projeto (TAPI) foi elaborado como um documento formal que não apenas dá início ao projeto, mas também estabelece com clareza as autorizações e limitações concedidas pelo cliente. Além disso, a transparência durante o desenvolvimento é enfatizada por meio de uma abordagem meticulosa de registro. Todos os processos, desde a concepção até a implementação, são minuciosamente documentados em tempo real e disponibilizados de maneira acessível ao cliente. Esta prática permite ao cliente acompanhar de perto e em detalhes o progresso do projeto, compreendendo as etapas enquanto estão em andamento.
 
-Além disso, a transparência das atividades durante o desenvolvimento é enfatizada por meio de uma abordagem meticulosa de registro. Todos os processos, desde a concepção até a implementação, são documentados em tempo real e disponibilizados de forma acessível ao cliente. Essa prática permite que o cliente acompanhe de perto e em detalhes o progresso do projeto, compreendendo as etapas enquanto estão em andamento.
+Juntamente com o registro das atividades, a equipe realiza regularmente reuniões ou relatórios de progresso, abordando avanços, desafios encontrados e ajustes no escopo ou abordagem. Essas interações são cruciais para manter o cliente bem informado e possibilitar uma colaboração efetiva, permitindo que suas contribuições sejam consideradas ao longo do desenvolvimento.
 
-Além do registro das atividades, a equipe implementa regularmente reuniões ou relatórios de progresso, onde são discutidos os avanços, desafios encontrados e quaisquer ajustes no escopo ou na abordagem. Essas interações são fundamentais para manter o cliente informado e possibilitar uma colaboração efetiva, permitindo que suas contribuições sejam consideradas durante todo o processo de desenvolvimento.
-
-A documentação detalhada não apenas oferece transparência, mas também serve como base para o consentimento informado. O cliente tem acesso claro e contínuo ao que está sendo feito, permitindo uma tomada de decisão informada e participativa ao longo do projeto.
+A documentação abrangente não apenas proporciona transparência, mas também serve como base para o consentimento informado. O cliente tem acesso claro e contínuo ao que está sendo feito, permitindo uma tomada de decisão informada e participativa durante todo o projeto. Adicionalmente, a implementação de logs auditáveis em todos os processos da solução reforça a integridade e rastreabilidade das informações, garantindo uma gestão eficiente e segura do projeto.
 
 ## Responsabilidade social
 
