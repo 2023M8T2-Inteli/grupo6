@@ -23,6 +23,46 @@ Posteriormente, implementamos um chat por meio de linhas de comando, proporciona
 
 Os pontos selecionados são registrados em uma lista, acessada posteriormente pelo Simple Commander. Este percorre a lista, enviando comandos de navegação para cada uma das posições definidas. Esse método intuitivo e adaptável não apenas simplifica a interação com o robô, mas também oferece uma abordagem flexível para explorar o ambiente de maneira precisa e personalizada.
 
+## Pacote Chofer
+
+O pacote 'chofer' é um conjunto de componentes cruciais para a navegação e controle do TurtleBot Burger, composto por vários arquivos-chave.
+
+O `mapper.py` é um nó ROS essencial neste pacote. Responsável pelo mapeamento e navegação, ele permite interação com o teclado para realizar ações específicas durante a operação do robô. Ao inicializar, cria um thread para escutar as entradas do teclado, possibilitando que o usuário pressione a tecla 's' para salvar o mapa. 
+
+A função `keyboard_listener` configura o terminal para leitura bruta, continua a ler o teclado indefinidamente e responde à tecla 's' acionando a função `save_map`, que executa um comando do sistema para salvar o mapa usando o pacote `nav2_map_server`. Esse nó é fundamental para o pacote 'chofer', permitindo ao operador salvar o mapa do ambiente durante a navegação do TurtleBot Burger.
+
+```
+def keyboard_listener(self):
+    # Seleciona o modo de leitura do teclado
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    
+    # Leitura do teclado
+    try:
+        self.get_logger().info("Press 's' to save the map.")
+        tty.setraw(fd)
+        while True:
+            key = sys.stdin.read(1) 
+            if key.lower() == 's': self.save_map()
+            elif key == '\x03': break
+    
+    # Caso ocorra algum erro, exibe o erro na tela
+    except Exception as e:
+        self.get_logger().error('Could not read key: %r' % e)
+    
+    # Restaura o modo de leitura do teclado
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+```
+
+Além disso, o pacote 'chofer' inclui o arquivo `mapper.launch.py`, que integra o mapper.py ao sistema de lançamento (launch system) do ROS 2. Este arquivo configura o lançamento do nó mapper juntamente com outros componentes necessários, como o lançamento do cartógrafo do TurtleBot Burger (turtlebot3_cartographer) e o controle de teleop via teclado (turtlebot3_teleop). Ao executar este lançamento, é possível iniciar o mapeamento do ambiente e controlar o robô com o teclado, facilitando a criação do mapa durante a operação.
+
+Por outro lado, temos o arquivo `navigator.py`, outro nó crucial do pacote 'chofer'. Responsável por aceitar comandos de waypoints através do tópico /waypoints, guia o TurtleBot Burger até pontos específicos no mapa. Este nó utiliza a biblioteca rclpy para se comunicar com o sistema ROS 2. Ao ser inicializado, instancia a classe BasicNavigator do pacote `nav2_simple_commander` para controlar a navegação básica do robô. Recebe mensagens do tópico `/waypoints`, interpreta os dados como pares de coordenadas (x, y) representando destinos no mapa e, com base nessas coordenadas, guia o robô até o ponto desejado. Essencial para a capacidade de navegação autônoma do TurtleBot Burger, este nó contribui significativamente para a precisão de movimento do robô no ambiente.
+
+O `navigator.launch.py`, por sua vez, é um arquivo de lançamento que integra o navigator.py ao sistema de lançamento do ROS 2. Ao executar este lançamento, o nó navigator é iniciado juntamente com o turtlebot3_navigation2, que configura a navegação do TurtleBot Burger. Isso permite ao robô receber comandos de navegação por waypoints e realizar movimentos precisos no ambiente, facilitando a sua capacidade de navegar autonomamente pelo ambiente mapeado.
+
+Esses arquivos e nós, em conjunto, compõem o pacote 'chofer', fornecendo funcionalidades cruciais para o mapeamento, navegação e controle do TurtleBot Burger no ambiente.
+
 ## Conexão com o robô
 
 Para estabelecer a conexão com o robô e enviar comandos, é imperativo acessar o terminal do robô por meio de uma conexão SSH. Em seguida, execute o comando a seguir:
@@ -44,14 +84,14 @@ A partir desse ponto, qualquer nó dentro desse workspace pode ser iniciado por 
 Para iniciar o lançador que executará todos os nós necessários para o mapeamento, utilize o seguinte comando:
 
 ```
-ros2 launch movement mapping_launcher.py
+ros2 launch chofer mapper.launch.py
 ```
 
 ## Execução da navegação
 
-Para acionar o nó utilizado na navegação, empregue o seguinte comando:
+Para acionar o lançador utilizado na navegação, empregue o seguinte comando:
 ```
-ros2 run movement navigation
+ros2 launch chofer navigator.launch.py
 ```
 
 ## Demonstração do mapeamento
