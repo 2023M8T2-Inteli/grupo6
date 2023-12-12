@@ -9,4 +9,12 @@ Uma matriz de risco é uma ferramenta que ajuda a identificar e avaliar a probab
 
 ![matriz de risco](/img/matriz_de_risco.png)
 
+## Propostas de Mitigação
 
+- Seguir rigorosamente metodologias ágeis, como Scrum, para otimizar a eficiência do desenvolvimento e garantir entregas incrementais.
+- Realizar testes em ambientes simulados para identificar e corrigir potenciais problemas de navegação antes da implementação real.
+- Implementar algoritmos de planejamento de trajetória eficientes para garantir rotas mais diretas e rápidas.
+- Realizar testes de integração regulares durante o desenvolvimento para identificar e resolver problemas antes da implementação completa.
+- Implementar design modular e componentes de fácil substituição para simplificar as operações de manutenção.
+- Fornecer treinamento adequado para a equipe de manutenção e documentação clara para procedimentos de resolução de problemas.
+- Adotar uma abordagem iterativa, implementando funcionalidades cruciais primeiro e expandindo o escopo conforme necessário.
