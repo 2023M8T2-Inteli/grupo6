@@ -56,6 +56,5 @@ ros2 run movement navigation
 
 ## Demonstração da navegação
 
-<video width="600" height="400" controls>
-  <source src="../../../static/img/navegacao.mp4"/>
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VTZQujUkQRs?si=LM92U75XIe5w-iH_" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
