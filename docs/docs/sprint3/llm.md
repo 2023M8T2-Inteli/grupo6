@@ -50,3 +50,5 @@ ros2 run chat output
 ```
 
 ## Demonstração do LLM
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o90ccG_K9Hw?si=5dw7hXQWtaX-5rYK" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

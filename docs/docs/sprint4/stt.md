@@ -14,3 +14,5 @@ Na implementação atual, no nó responsável pela interface Gradio, foi incorpo
 Planejamos futuras implementações, incluindo a integração de um nó dedicado para STT, proporcionando aprimoramentos da modularização do sistema.
 
 ## Demonstração
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zhh_MciKsNw?si=i7pW4PHAVQ91t-ft" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
