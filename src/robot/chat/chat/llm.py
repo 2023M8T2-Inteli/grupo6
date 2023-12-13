@@ -40,7 +40,7 @@ class LLMNode(Node):
 
         model = ChatOpenAI(model="gpt-3.5-turbo")
 
-        loader = PyPDFLoader("./chat/chat/data/points.pdf")
+        loader = PyPDFLoader("./data/points.pdf")
         pages = loader.load_and_split()
 
         text_splitter = CharacterTextSplitter(
@@ -53,7 +53,7 @@ class LLMNode(Node):
         retriever = vectorstore.as_retriever()
 
         prompt = ChatPromptTemplate.from_template(
-        """Answer the question based on the following context:
+            """Answer the question based on the following context:
         {context}
 
         Question: {question}
