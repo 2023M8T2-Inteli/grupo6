@@ -2,25 +2,37 @@
 //router.get('/', chatController.getChat);
 const rclnodejs = require('rclnodejs');
 
-class SendToLLM {
+class APINode {
   constructor() {
     this.node = rclnodejs.createNode('send_to_llm');
     this.publisher = this.node.createPublisher('std_msgs/msg/String', '/llm');
     this.subscription = this.node.createSubscription('std_msgs/msg/String', '/output', (msg) => {
-      console.log(`I heard: [${msg.data}]`);
+      this.listenner(msg);
     });
+    this.msg = "";
   }
 
+  publish(msg) {
+    this.publisher.publish(msg);
+    console.log(`[APINode][/llm]: ${msg}`);
+    this.msg = msg;
+  }
   
+  listenner(msg) {
+    console.log(`[Robot][/output]: ${msg}]`);
+    this.msg = msg;
+  }
+
+  listen() {
+    return this.msg;
+  }
+
 }
+
+
+const node = new APINode();
 rclnodejs.init().then(() => {
-  const node = rclnodejs.createNode('publisher_example_node');
-  const publisher = node.createPublisher('std_msgs/msg/String', '/llm');
-  publisher.publish("parametro do llm");
-
-  rclnodejs.spin(node);
+rclnodejs.spin(node);
 });
-//sefodeu kkkakakaka
 
-
-module.exports = router;
+module.exports = node;
