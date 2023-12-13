@@ -22,8 +22,10 @@ class LLMNode(Node):
             callback=self.listener_callback,
             qos_profile=10
         )
-        self.publisher_ = self.create_publisher(msg_type=String, topic="/chatbot", qos_profile=10)
-        self.publisher_log = self.create_publisher(msg_type=String, topic="log_register", qos_profile=10)
+        self.publisher_ = self.create_publisher(
+            msg_type=String, topic="/chatbot", qos_profile=10)
+        self.publisher_log = self.create_publisher(
+            msg_type=String, topic="log_register", qos_profile=10)
         self.load()
 
         self.get_logger().info("LLM Node created successfully")
@@ -33,7 +35,7 @@ class LLMNode(Node):
 
         model = ChatOpenAI(model="gpt-3.5-turbo")
 
-        loader = PyPDFLoader("./chat/chat/data/points.pdf")
+        loader = PyPDFLoader("./data/points.pdf")
         pages = loader.load_and_split()
 
         text_splitter = CharacterTextSplitter(
@@ -46,7 +48,7 @@ class LLMNode(Node):
         retriever = vectorstore.as_retriever()
 
         prompt = ChatPromptTemplate.from_template(
-        """Answer the question based on the following context:
+            """Answer the question based on the following context:
         {context}
 
         Question: {question}
