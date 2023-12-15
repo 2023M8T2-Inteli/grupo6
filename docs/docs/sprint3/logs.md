@@ -2,7 +2,8 @@
 sidebar_position: 2
 slug: '/sprint3/logs'
 ---
-## Sistema de log
+
+# Sistema de Log
 
 O SLM, ou Sistema de Log, é uma abordagem essencial no contexto do desenvolvimento de sistemas, destacando-se por sua capacidade de registrar e monitorar atividades, proporcionando insights valiosos sobre o comportamento e desempenho do sistema. Essa prática é fundamental para identificar e solucionar problemas, além de rastrear eventos relevantes.
 
