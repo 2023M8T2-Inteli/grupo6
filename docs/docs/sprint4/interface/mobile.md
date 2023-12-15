@@ -7,6 +7,9 @@ slug: '/sprint4/interface/mobile'
 
 Anteriormente, foi apresentado o protótipo da interface de usuário utilizando o figma. Na sprint 4, o desenvolvimento da interface mobile foi iniciado utilizando [React Native](https://reactnative.dev).
 
+Um design mais simplista é a melhor escolha para tornar uma interface mais tranquila de ser usada. Além de possuir 
+A decisão de iniciar uma interface mobile foi montada pensando na usabilidade do usuário, uma vez que uma interface acessada pelo celular é mais prática e facilita o processo para o usuário.
+
 ## Bibliotecas utilizadas
 
 - [React Native](https://reactnative.dev): Framework javascript para desenvolvimento mobile baseaado no [React](https://react.dev);
