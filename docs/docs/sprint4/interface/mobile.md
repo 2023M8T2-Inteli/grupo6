@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: '/sprint4/interface/mobile'
 ---
 
-# Interface mobile
+# Interface Mobile
 
 Anteriormente, foi apresentado o protótipo da interface de usuário utilizando o figma. Na sprint 4, o desenvolvimento da interface mobile foi iniciado utilizando [React Native](https://reactnative.dev).
 
@@ -15,6 +15,11 @@ A decisão de iniciar uma interface mobile foi montada pensando na usabilidade d
 - [React Native](https://reactnative.dev): Framework javascript para desenvolvimento mobile baseaado no [React](https://react.dev);
 - [NativeWind](https://www.nativewind.dev): Framework css para desenvolvimento em react native baseado no [Tailwindcss](https://tailwindcss.com);
 - [Expo](https://expo.dev): Framework para desenvolvimento mobile que compila e permite a execução do projeto e, também, o seu deploy.
+
+## Telas
+
+![Tela inicial](../../../static/img/tela-inicio.jpeg)
+![Tela chat](../../../static/img/tela-chat.jpeg)
 
 ## Resultados
 
