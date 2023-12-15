@@ -23,4 +23,23 @@ A decisão de iniciar uma interface mobile foi montada pensando na usabilidade d
 
 ## Resultados
 
-Ainda falta a integração de todas as funcionalidades ao backend que está sendo desenvolvido em conjunto. Futuramente essas questões de integração serão abordadas.
+As páginas que desenvolvemos com sucesso envolvem o primeiro e mais importante fluxo da nossa aplicação:
+
+<div style={{"margin": "0 auto", "max-width": "400px", "display": "flex", "justify-content": "space-around"}}>
+
+<div style={{"padding-right": "30px"}}>
+
+![Home](../../../static/img/interface/mobile/home.jpg)
+
+</div>
+
+![Página do chat](../../../static/img/interface/mobile/chat.jpg)
+
+</div>
+
+É notório o design intuitivo e de fácil uso. As cores condizem com a identidade visual do grupo, Chauffeur, tal como a tipografia usada nas nossas apresentações. 
+A interface foi projetada para satisfazer dispositivos móveis, com um fluxo de usuário simples.
+
+No tocante a usabilidade e acessibilidade da interface, ainda há nada implementado, tendo em vista que ela ainda está em desenvolvimento. Mas é planejado colocar alternativas para áudio, integrações com serviços de acessibilidade, em todas as imagens são colocados os argumentos "alt", para a descrição da imagem caso esta não renderize, etc.
+
+Tendo isso em vista, ainda falta a integração de todas as funcionalidades ao backend que está sendo desenvolvido em conjunto. Futuramente essas questões de integração serão abordadas neste documento.
