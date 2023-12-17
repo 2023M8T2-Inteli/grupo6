@@ -1,47 +1,58 @@
-#! /bin/env python3
+import os
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
-import speech_recognition as sr
+import sounddevice as sd
+import numpy as np
+from openai import OpenAI
+from pathlib import Path
+import wave
 
-class SpeechToTextNode(Node):
-
+class STT(Node):
     def __init__(self):
-        super().__init__('speech_to_text_node')
-        self.publisher_ = self.create_publisher(String, '/speech_text', 10)
-        self.recognizer = sr.Recognizer()
-        self.microphone = sr.Microphone()
+        super().__init__('audio_transcription_node')
+        self.client = OpenAI()
 
-        self.get_logger().info("Iniciando reconhecimento de fala...")
-        self.listen_for_speech()
+    def record_audio(self, file_path, duration=10, sample_rate=44100):
+        self.get_logger().info("Gravando...")
 
-    def listen_for_speech(self):
-        with self.microphone as source:
-            self.recognizer.adjust_for_ambient_noise(source)  # Ajusta para o ruído do ambiente
-            self.get_logger().info("Diga algo!")
-            audio = self.recognizer.listen(source)
+        audio_data = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=2, dtype=np.int16)
+        sd.wait()
 
-        try:
-            text = self.recognizer.recognize_google(audio, language='en')  # Reconhece a fala usando a API do Google
-            self.get_logger().info(f"Texto reconhecido: {text}")
-            self.publish_text(text)
-        except sr.UnknownValueError:
-            self.get_logger().info("Não foi possível reconhecer a fala.")
-        except sr.RequestError as e:
-            self.get_logger().info(f"Erro durante a requisição ao serviço de reconhecimento: {e}")
+        with wave.open(file_path, 'wb') as wf:
+            wf.setnchannels(2)
+            wf.setsampwidth(2)
+            wf.setframerate(sample_rate)
+            wf.writeframes(audio_data.tobytes())
 
-    def publish_text(self, text):
-        msg = String()
-        msg.data = text
-        self.publisher_.publish(msg)
-        self.get_logger().info("Texto publicado!")
+        self.get_logger().info(f"Audio recorded and saved to {file_path}")
+
+    def transcribe_audio(self, file_path):
+        with open(file_path, "rb") as file:
+            transcription = self.client.audio.transcriptions.create(file=file)
+        return transcription.text
+
+    def start_transcription(self, file_path):
+        if file_path:
+            transcription = self.transcribe_audio(file_path)
+        else:
+            file_path = 'gravacao.wav'
+            self.record_audio(file_path)
+            transcription = self.transcribe_audio(file_path)
+
+        self.get_logger().info('TRANSCRIPTION: %s' % transcription)
 
 def main(args=None):
     rclpy.init(args=args)
-    speech_to_text_node = SpeechToTextNode()
-    rclpy.spin(speech_to_text_node)
-    speech_to_text_node.destroy_node()
+    audio_transcription_node = STT()
+    file_path = '/path/to/your/audio/file.wav'  # Set your default audio file path here
+
+    try:
+        audio_transcription_node.start_transcription(file_path)
+    except KeyboardInterrupt:
+        pass
+
+    audio_transcription_node.destroy_node()
     rclpy.shutdown()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
