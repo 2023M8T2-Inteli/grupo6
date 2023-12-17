@@ -1,8 +1,19 @@
 import { View, Text, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export function SapCard() {
+const COLORS = [
+  {
+    background: "bg-rose-100",
+    foreground: "bg-red-300",
+  },
+  {
+    background: "bg-cyan-50",
+    foreground: "bg-sky-300",
+  },
+];
+
+export function SapCard({ data, idx }) {
   const navigation = useNavigation();
 
   const toggleNavigate = () => {
@@ -11,18 +22,24 @@ export function SapCard() {
   return (
     <Pressable
       onPress={() => toggleNavigate()}
-      className="bg-rose-100 rounded-2xl mr-8 w-1/12 h-[25vh] flex justify-around items-start"
+      className={`${
+        COLORS[idx % COLORS.length].background
+      } rounded-2xl w-44 mx-4 h-[25vh] flex justify-start items-start`}
     >
-      <View className="flex justify-around w-full items-center flex-row">
-        <View className="bg-red-300 p-1 flex rounded-2xl justify-around">
-          <Ionicons name="hammer" size={60} color="black" />
+      <View className="flex justify-around my-6 w-full items-center flex-row">
+        <View
+          className={`${
+            COLORS[idx % COLORS.length].foreground
+          } p-1 flex rounded-2xl justify-around`}
+        >
+          <MaterialCommunityIcons name={data.icon} size={60} color="black" />
         </View>
         <View></View>
       </View>
       <View className="flex w-full items-start">
-        <Text className="ml-2 text-xl font-semibold">Engineering</Text>
+        <Text className="ml-2 text-xl font-semibold">{data.title}</Text>
         <Text className="ml-2 text-xs font-medium h-fit text-neutral-400">
-          Axes, hammers, pliers, screw tools, chisels...
+          {data.description}
         </Text>
       </View>
     </Pressable>
