@@ -2,7 +2,7 @@ import { View, ScrollView, Text, Pressable } from "react-native";
 
 export function ScrollFilter({ handleFilterClick, filters }) {
   return (
-    <ScrollView horizontal className="flex gap-x-1 my-4">
+    <ScrollView horizontal className="flex gap-x-1 my-4 grow-0">
       {filters.map((cat, idx) => (
         <Pressable key={idx} onPress={() => handleFilterClick(idx)}>
           <Text

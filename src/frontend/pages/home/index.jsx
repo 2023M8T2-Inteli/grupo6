@@ -28,7 +28,7 @@ export function Home() {
             className="text-4xl"
             onPress={() => navigation.navigate("ChatScreen")}
           >
-            <Text className="bg-[#E9344E] text-white text-4xl p-4 rounded-2xl px-12 font-thin">
+            <Text className="bg-[#E9344E] text-white text-4xl p-4 rounded-2xl px-12 font-bold">
               Start Chat
             </Text>
           </Pressable>

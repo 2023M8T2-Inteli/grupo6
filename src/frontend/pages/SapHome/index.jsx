@@ -1,7 +1,8 @@
-import { View } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import { useState } from "react";
 
 import { ScrollFilter } from "../../components/ScrollFilterH";
+import { FilterSection } from "../../components/filterSection";
 
 const CATEGORIES = [
   {
@@ -41,7 +42,11 @@ export function SapHome() {
   return (
     <View className="h-full">
       <ScrollFilter handleFilterClick={handleFilterClick} filters={filters} />
-      <View></View>
+      <ScrollView>
+        <FilterSection />
+        <FilterSection />
+        <FilterSection />
+      </ScrollView>
     </View>
   );
 }
