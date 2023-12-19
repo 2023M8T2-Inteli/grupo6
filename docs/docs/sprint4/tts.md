@@ -40,6 +40,16 @@ class TTSNode(Node):
 
 É relevante notar que, devido às interferências do Whisper que traduzem os textos para inglês, quando a resposta é ditada, ela ocorre em inglês, embora com um sotaque brasileiro.
 
+## Como executar
+
+Para executar o nó responsável pelo TTS, execute na raíz do workspace:
+
+```
+colcon build
+source install/local_setup.bash # substitua por zsh, se necessário
+ros2 run chat tts
+```
+
 ## Demonstração
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zhh_MciKsNw?si=i7pW4PHAVQ91t-ft" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -16,14 +16,9 @@ A decisão de iniciar uma interface mobile foi montada pensando na usabilidade d
 - [NativeWind](https://www.nativewind.dev): Framework css para desenvolvimento em react native baseado no [Tailwindcss](https://tailwindcss.com);
 - [Expo](https://expo.dev): Framework para desenvolvimento mobile que compila e permite a execução do projeto e, também, o seu deploy.
 
-## Telas
-
-![Tela inicial](../../../static/img/tela-inicio.jpeg)
-![Tela chat](../../../static/img/tela-chat.jpeg)
-
 ## Resultados
 
-As páginas que desenvolvemos com sucesso envolvem o primeiro e mais importante fluxo da nossa aplicação:
+As telas desenvolvidas até o momento são a tela de inicialização do sistema e a de chat. A conversa demonstrada não está integrada, logo, ela foi mockada pelo desenvolvedor.
 
 <div style={{"margin": "0 auto", "max-width": "400px", "display": "flex", "justify-content": "space-around"}}>
 
@@ -43,3 +38,12 @@ A interface foi projetada para satisfazer dispositivos móveis, com um fluxo de 
 No tocante a usabilidade e acessibilidade da interface, ainda há nada implementado, tendo em vista que ela ainda está em desenvolvimento. Mas é planejado colocar alternativas para áudio, integrações com serviços de acessibilidade, em todas as imagens são colocados os argumentos "alt", para a descrição da imagem caso esta não renderize, etc.
 
 Tendo isso em vista, ainda falta a integração de todas as funcionalidades ao backend que está sendo desenvolvido em conjunto. Futuramente essas questões de integração serão abordadas neste documento.
+
+## Como executar
+
+Para instalar as dependências necessárias e inicializar a interface, execute:
+
+```
+npm i
+npm expo start
+```
