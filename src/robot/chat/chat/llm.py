@@ -21,14 +21,16 @@ import gradio as gr
 class LLMNode(Node):
     def __init__(self):
         super().__init__('llm_node')
-
-        self.client = OpenAI()
-        
+        self.subscription_ = self.create_subscription(
+            msg_type=String,
+            topic="/llm",
+            callback=self.listener_callback,
+            qos_profile=10
+        )
         self.publisher_ = self.create_publisher(
-            msg_type = String,
-            topic = '/output',
-            qos_profile=10)
-        
+            msg_type=String, topic="/chatbot", qos_profile=10)
+        self.publisher_log = self.create_publisher(
+            msg_type=String, topic="log_register", qos_profile=10)
         self.load()
 
         self.run()
