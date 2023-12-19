@@ -12,23 +12,17 @@ const getllm = async (req, res) => {
     }
 }
 
-const postMsg = async (req, res) => {
-    console.log(req.body);
-    const {msg} = req.body.msg;
-    
+const postLLM = async (req, res) => {
+    const msg = req.body.msg;
+
+
     try {
-        const response = await msg.postMsg(msg);
-        res.json(response);
+        publish(msg);
+        res.json({message:msg})
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
 
-const postLLM = async (req, res) => {
-    console.log("Req: ", req.body);
-    const msg = req.body.msg;
-
-    publish(msg);
 }
 
 module.exports = {
