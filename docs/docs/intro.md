@@ -36,4 +36,3 @@ Em construção. Volte mais tarde =D
 :::
 
 Esta documentação oferecerá uma visão completa, tanto técnica quanto conceitual, de cada fase do projeto. Explore as seções subsequentes para detalhes específicos sobre cada sprint, proporcionando uma compreensão abrangente do progresso e da visão final do produto.
-A seguir, um resumo em português claro e conciso do que deve ser desenvolvido em cada sprint.
