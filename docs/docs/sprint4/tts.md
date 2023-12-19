@@ -42,9 +42,11 @@ class TTSNode(Node):
 
 ## Como executar
 
-Para executar o nó responsável pelo TTS, execute:
+Para executar o nó responsável pelo TTS, execute na raíz do workspace:
 
 ```
+colcon build
+source install/local_setup.bash # substitua por zsh, se necessário
 ros2 run chat tts
 ```
 

@@ -38,3 +38,12 @@ A interface foi projetada para satisfazer dispositivos móveis, com um fluxo de 
 No tocante a usabilidade e acessibilidade da interface, ainda há nada implementado, tendo em vista que ela ainda está em desenvolvimento. Mas é planejado colocar alternativas para áudio, integrações com serviços de acessibilidade, em todas as imagens são colocados os argumentos "alt", para a descrição da imagem caso esta não renderize, etc.
 
 Tendo isso em vista, ainda falta a integração de todas as funcionalidades ao backend que está sendo desenvolvido em conjunto. Futuramente essas questões de integração serão abordadas neste documento.
+
+## Como executar
+
+Para instalar as dependências necessárias e inicializar a interface, execute:
+
+```
+npm i
+npm expo start
+```

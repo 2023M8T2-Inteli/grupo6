@@ -13,9 +13,11 @@ No entanto, se o conteúdo recebido pertencer a um áudio, essa informação pas
 
 ## Como executar
 
-A interface está inserida no nó de LLM, logo, para que ela seja inicializada, execute:
+A interface está inserida no nó de LLM, logo, para que ela seja inicializada, execute na raíz do workspace:
 
 ```
+colcon build
+source install/local_setup.bash # substitua por zsh, se necessário
 ros2 run chat llm
 ```
 
