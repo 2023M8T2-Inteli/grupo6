@@ -54,6 +54,14 @@ Planejamos futuras implementações, incluindo a integração de um nó dedicado
 
 Podemos inferir que o requisito foi atendido, dado que todas as solicitações ao sistema, tanto em formato de áudio quanto de texto, são processadas no tempo correto.
 
+## Como executar
+
+A funcionalidade do STT está incluída no nó de LLM, logo, para inicializá-lo, execute:
+
+```
+ros2 run chat llm
+```
+    
 ## Demonstração
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zhh_MciKsNw?si=i7pW4PHAVQ91t-ft" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
