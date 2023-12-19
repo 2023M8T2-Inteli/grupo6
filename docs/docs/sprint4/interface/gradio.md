@@ -11,3 +11,6 @@ Nesta sprint, também foram implementados os processos de Speech-to-Text (STT) e
 
 No entanto, se o conteúdo recebido pertencer a um áudio, essa informação passa inicialmente pelo processo de STT, sendo transcrita antes de ser enviada ao LLM. Esse processo repete a dinâmica mencionada anteriormente, proporcionando uma integração eficiente entre as interfaces de texto e áudio.
 
+## Demonstração
+
+![Gradio](../../../static/img/gradio.png)

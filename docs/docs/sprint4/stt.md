@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: '/sprint4/stt'
 ---
 
@@ -9,9 +9,50 @@ A tecnologia empregada na transcrição de áudio, conhecida como Speech-to-text
 
 Na implementação atual, no nó responsável pela interface Gradio, foi incorporada a capacidade de acessar o conteúdo do componente de microfone. Essa adição possibilita o processamento do áudio gravado e o envio do resultado da transcrição para o componente de chat, exibindo a mensagem do usuário em formato de texto na interface. Além disso, o texto transcrito é enviado ao LLM para geração de resposta, facilitando a interação completa.
 
+```
+def transcribe_audio(self, file_path):
+        audio_file = open(file_path, "rb")
+        transcript = self.client.audio.translations.create(
+            model="whisper-1", 
+            file=audio_file,
+            response_format="text"
+        )
+        return transcript
+
+    def respond(self, text, audio, chat_history=[]):
+        response = ''
+        if text:
+            for s in self.chain.stream(text):
+                response += s.content
+            
+            self.send_points(response)
+
+            chat_history.append((text, response))
+
+            return chat_history
+
+        elif audio:
+            transcribed = self.transcribe_audio(audio)
+
+            for s in self.chain.stream(transcribed):
+                response += s.content
+
+            self.send_points(response)
+
+            chat_history.append((transcribed, response))
+
+            return chat_history
+```
+
 É importante notar que, devido ao uso do Whisper, a transcrição do texto ocorre em inglês, influenciando, por consequência, as respostas do LLM, que também são geradas nesse idioma. Além disso, observamos restrições de uso do framework Gradio, especialmente em relação à gravação de voz, que apresentou desafios em alguns computadores, impactando o desempenho do Whisper.
 
 Planejamos futuras implementações, incluindo a integração de um nó dedicado para STT, proporcionando aprimoramentos da modularização do sistema.
+
+## Checklist de Requisitos
+
+- O sistema deve processar comandos de fala ou texto em menos de 5 segundos 
+
+Podemos inferir que o requisito foi atendido, dado que todas as solicitações ao sistema, tanto em formato de áudio quanto de texto, são processadas no tempo correto.
 
 ## Demonstração
 
