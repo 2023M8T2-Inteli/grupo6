@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 slug: '/sprint4/tts'
 ---
 
@@ -39,6 +39,16 @@ class TTSNode(Node):
 ```
 
 É relevante notar que, devido às interferências do Whisper que traduzem os textos para inglês, quando a resposta é ditada, ela ocorre em inglês, embora com um sotaque brasileiro.
+
+## Como executar
+
+Para executar o nó responsável pelo TTS, execute na raíz do workspace:
+
+```
+colcon build
+source install/local_setup.bash # substitua por zsh, se necessário
+ros2 run chat tts
+```
 
 ## Demonstração
 

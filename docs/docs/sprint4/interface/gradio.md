@@ -11,6 +11,16 @@ Nesta sprint, também foram implementados os processos de Speech-to-Text (STT) e
 
 No entanto, se o conteúdo recebido pertencer a um áudio, essa informação passa inicialmente pelo processo de STT, sendo transcrita antes de ser enviada ao LLM. Esse processo repete a dinâmica mencionada anteriormente, proporcionando uma integração eficiente entre as interfaces de texto e áudio.
 
+## Como executar
+
+A interface está inserida no nó de LLM, logo, para que ela seja inicializada, execute na raíz do workspace:
+
+```
+colcon build
+source install/local_setup.bash # substitua por zsh, se necessário
+ros2 run chat llm
+```
+
 ## Demonstração
 
 ![Gradio](../../../static/img/gradio.png)
