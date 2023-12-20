@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { View, FlatList } from "react-native";
-import { ScrollFilter } from "../../components/ScrollFilterH";
+import { View, FlatList, Pressable, Text, ScrollView } from "react-native";
 import { SapItem } from "../../components/sapItem";
 
 const ALLDATA = [
@@ -40,59 +39,44 @@ const ALLDATA = [
     position: [1, 3, 4],
     icon: "axe",
   },
+  {
+    id: 5,
+    name: "axe",
+    category: "Other",
+    stock: 3,
+    delivery: "3 days",
+    position: [1, 3, 4],
+    icon: "axe",
+  },
 ];
 
 export function SapRequest() {
   const [myData, setMyData] = useState(ALLDATA);
-
-  const uniqueTitlesSet = new Set([
-    "All",
-    ...ALLDATA.map((item) => item.category),
-  ]);
-
-  const uniqueTitlesArray = Array.from(uniqueTitlesSet);
-
-  const [filters, setFilters] = useState(
-    uniqueTitlesArray.map((category) => ({
-      name: category,
-      selected: category === "All",
-    }))
-  );
-
-  const handleFilterClick = (idx) => {
-    const newFilters = filters.map((filter, index) => {
-      return {
-        ...filter,
-        selected: index === idx,
-      };
-    });
-
-    setFilters(newFilters);
-
-    const selectedCategory = newFilters.find((filter) => filter.selected).name;
-
-    if (selectedCategory === "All") {
-      setMyData(ALLDATA);
-    } else {
-      const filteredData = ALLDATA.filter(
-        (item) => item.category === selectedCategory
-      );
-      setMyData(filteredData);
-    }
-  };
 
   const renderItem = useCallback(({ item }) => {
     return <SapItem item={item} />;
   }, []);
 
   return (
-    <View className="flex">
-      <ScrollFilter handleFilterClick={handleFilterClick} filters={filters} />
+    <View className="flex h-full">
+      <View className="flex w-5/6 self-center my-2">
+        <Text className="text-sm text-center">
+          Itens que você está solicitando para o almoxarifado:{" "}
+        </Text>
+      </View>
       <FlatList
         keyExtractor={(item) => item.id.toString()}
         data={myData}
         renderItem={renderItem}
+        className="flex w-5/6 border m-1 rounded-2xl self-center"
       />
+      <View className="h-24 flex items-center justify-center">
+        <Pressable className="flex rounded-2xl p-4 w-2/3 items-center bg-[#E9344E] ">
+          <Text className="text-center font-bold text-2xl text-white">
+            Fazer requisição
+          </Text>
+        </Pressable>
+      </View>
     </View>
   );
 }

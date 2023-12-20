@@ -24,7 +24,7 @@ export function SapCard({ data, idx }) {
       onPress={() => toggleNavigate()}
       className={`${
         COLORS[idx % COLORS.length].background
-      } rounded-2xl w-44 mx-4 h-[25vh] flex justify-start items-start`}
+      } rounded-2xl w-44 mx-4 h-[25vh] flex justify-start items-start border-r-8 border-b-4`}
     >
       <View className="flex justify-around my-6 w-full items-center flex-row">
         <View
