@@ -6,6 +6,7 @@ import re
 import soundfile as sf
 import numpy as np
 from openai import OpenAI
+from theme import seafoam as theme
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
@@ -28,6 +29,11 @@ class LLMNode(Node):
             msg_type = String,
             topic = '/output',
             qos_profile=10)
+        
+        self.avatar_images = (
+            "./data/user.png",
+            "./data/robot.png"
+        )
         
         self.load()
 
@@ -112,15 +118,13 @@ class LLMNode(Node):
             return chat_history
 
     def run(self):
-        with gr.Blocks() as demo:
-            chatbot = gr.Chatbot()
+        with gr.Blocks(theme=theme) as demo:
+            chatbot = gr.Chatbot(avatar_images=self.avatar_images)
             with gr.Row():
                 msg = gr.Textbox()
-                mic = gr.Audio(type='filepath')
-            btn = gr.Button(value='Submit')
+                mic = gr.Audio(sources='microphone', type='filepath')
+            btn = gr.Button(value='Submit', variant="primary")
             btn.click(self.respond, inputs=[msg, mic], outputs=[chatbot])
-
-        demo.launch()
 
 def main(args=None):
     rclpy.init(args=args)
