@@ -6,7 +6,7 @@ import re
 import soundfile as sf
 import numpy as np
 from openai import OpenAI
-from theme import seafoam as theme
+from .theme import theme
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
@@ -23,19 +23,19 @@ class LLMNode(Node):
     def __init__(self):
         super().__init__('llm_node')
 
+        self.load()
+
         self.client = OpenAI()
         
         self.publisher_ = self.create_publisher(
             msg_type = String,
             topic = '/output',
             qos_profile=10)
-        
+
         self.avatar_images = (
-            "./data/user.png",
-            "./data/robot.png"
+            "./chat/chat/data/user.png",
+            "./chat/chat/data/robot.png"
         )
-        
-        self.load()
 
         self.run()
 
@@ -59,10 +59,10 @@ class LLMNode(Node):
         retriever = vectorstore.as_retriever()
 
         prompt = ChatPromptTemplate.from_template(
-        """Answer the question based on the following context:
+        """Responda de acordo com o seguinte contexto:
         {context}
 
-        Question: {question}
+        Pergunta: {question}
         """)
 
         self.chain = (
@@ -79,10 +79,12 @@ class LLMNode(Node):
 
     def transcribe_audio(self, file_path):
         audio_file = open(file_path, "rb")
-        transcript = self.client.audio.translations.create(
+        self.client = OpenAI()
+        transcript = self.client.audio.transcriptions.create(
             model="whisper-1", 
             file=audio_file,
-            response_format="text"
+            response_format="text",
+            language="pt"
         )
         return transcript
 
@@ -122,9 +124,13 @@ class LLMNode(Node):
             chatbot = gr.Chatbot(avatar_images=self.avatar_images)
             with gr.Row():
                 msg = gr.Textbox()
-                mic = gr.Audio(sources='microphone', type='filepath')
+                mic = gr.Audio(type='filepath')
             btn = gr.Button(value='Submit', variant="primary")
             btn.click(self.respond, inputs=[msg, mic], outputs=[chatbot])
+
+        demo.launch()
+
+        self.get_logger().info("Gradio running successfully")
 
 def main(args=None):
     rclpy.init(args=args)
