@@ -19,7 +19,7 @@ def postComponents(component, description, quantity):
 def updateComponents(component, description, quantity):
     response = requests.post(
         f'{components_url}/update',
-        json={'component':component, 'description':description, 'quantity':quantity}
+        json={'component':component, 'new_description':description, 'new_quantity':quantity}
     )
     data = response.json()
     return data
