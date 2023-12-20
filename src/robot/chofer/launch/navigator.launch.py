@@ -12,7 +12,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'use_sim_time': 'False',
-            'map': 'c2-papel.yaml'
+            'map': 'maps/c2-papel.yaml'
         }.items(),
     )
 
