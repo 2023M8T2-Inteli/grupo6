@@ -4,13 +4,16 @@ sidebar_position: 1
 slug: /
 ---
 
-# Desenvolvimento de um Robô de Serviço Autônomo
+# Introdução
 
-A seguir, a documentação do projeto colaborativo entre Inteli e a Ambev para o desenvolvimento de um Robô de Serviço Autônomo. Este projeto tem como objetivo principal a criação de um robô capaz de guiar os colaboradores da Ambev para diferentes locais do almoxarifado de forma autônoma. Além disso, será implementado um chatbot para facilitar a realização de requisições de peças do almoxarifado, proporcionando uma experiência mais eficiente e interativa.
+## Objetivo
 
-## Objetivos do Projeto
+O projeto implementa os mais recentes avanços nos campos de machine learning e da robótica para maximizar a eficiência logístico-operacional do gerenciamento de almoxarifado.
+Em sua forma essencial, o resultado dessa harmonização é uma interface através da qual o usuário pode, tanto em texto quanto em voz, solicitar informações específicas sobre determinada peça a um LLM, e ser guiado à sua precisa localização no almoxarifado por um veículo autônomo.
 
-O projeto será executado em sprints, cada uma centrada em aspectos específicos do desenvolvimento. A seguir, detalhamos os objetivos primordiais de cada sprint:
+## Execução
+
+A organização operacional do projeto deu-se a partir dos pilares postulados pelo método SCRUM. O projeto foi temporalizado através *sprints*, intervalos de tempo de duas semanas cada dedicados puramente ao desenvolvimento de determinado capítulo do projeto. 
 
 ### Sprint 1: Entendimento de Negócios e Arquitetura Inicial
 - Aprofundamento no mercado e na solução proposta.
@@ -31,8 +34,5 @@ O projeto será executado em sprints, cada uma centrada em aspectos específicos
 - Integração de tecnologias de reconhecimento de fala (STT - Speech-to-Text) e síntese de fala (TTS - Text-to-Speech).
 
 ### Sprint 5: Aprimoramento
-:::info
-Em construção. Volte mais tarde =D
-:::
-
-Esta documentação oferecerá uma visão completa, tanto técnica quanto conceitual, de cada fase do projeto. Explore as seções subsequentes para detalhes específicos sobre cada sprint, proporcionando uma compreensão abrangente do progresso e da visão final do produto.
+- Conclusão da interface e sua integração com o restante do projeto.
+- Aprimoramento final das funcionalidades-base do sistema como um todo.

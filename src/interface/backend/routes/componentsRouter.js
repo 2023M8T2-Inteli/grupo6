@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const componentsController = require('../controllers/componentsController');
-const { route } = require('./chatRouter');
+const authenticateToken = require('../middleware/auth');
 
 router.get('/get/:component', componentsController.getComponents);
 router.post('/post', componentsController.postComponents);
