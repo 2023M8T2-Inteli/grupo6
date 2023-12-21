@@ -8,7 +8,7 @@ function authenticateToken(req, res, next) {
   }
 
   try {
-    const decodedToken = jwt.verify(token, 'secreto');
+    const decodedToken = jwt.verify(token, 'secret');
 
     req.userId = decodedToken.loginId;
     req.adminStatus = decodedToken.adminStatus;
