@@ -1,48 +1,54 @@
 ---
 sidebar_position: 1
-slug: '/sprint5/Backend'
+slug: '/sprint5/incremento'
 ---
 
 
 
-# Backend
+# Incremento da Interface Mobile
 
-Nesta seção, abordaremos a explicação do backend, desenvolvido utilizando [Node.js](https://nodejs.org/docs/latest/api/), um framework amplamente reconhecido para a construção de backends com JavaScript.
+Anteriormente, apresentamos o protótipo da interface de usuário usando o Figma, conforme documentado. Na sprint 4, iniciamos o desenvolvimento da interface mobile utilizando [React Native](https://reactnative.dev).
 
-O principal objetivo do backend é atuar como um regulador, garantindo que todas as requisições feitas pelos usuários sejam devidamente processadas e encaminhadas para o destino adequado. Além de controlar a arquitetura de nós e os registros no banco de dados, o backend também gerencia o sistema de log, responsável por armazenar informações cruciais para a manutenção do sistema.
+O objetivo primordial da interface mobile é garantir a máxima intuitividade e acessibilidade. Além de promover aprendizado, buscamos criar uma interface gráfica portátil, otimizada para dispositivos com capacidade computacional limitada. Nosso principal propósito é integrar-se ao contexto da Ambev, aprimorando o fluxo de trabalho existente sem interrupções significativas, de modo a ser adotado por um amplo espectro de colaboradores. O processo no almoxarifado se concentra em permitir que os usuários façam pedidos por meio de seus celulares, dispositivos que estão presentes na maioria dos cenários da fábrica da Ambev, facilitando a requisição de peças de manutenção em diversos locais.
 
-A meta principal é tornar o backend o mais escalável possível, desempenhando o papel de mediador. A arquitetura de nós é composta por um nó backend, nós LLM, STT, TTS, frontend e Nav2. A estrutura é projetada para garantir eficiência e coordenação entre esses elementos.
+Optamos por um design simplificado para tornar a interface mais amigável. Reconhecemos que uma interface acessada por dispositivos móveis é mais prática, simplificando o processo para o usuário.
 
-Optamos por um design simplificado para tornar a interface mais amigável, reconhecendo a praticidade de uma interface acessada por dispositivos móveis.
+Além disso, reconhecemos o impacto significativo do mercado de aplicativos móveis na vida das pessoas. O que antes era exclusivo para a área técnica, a tecnologia móvel democratizou o acesso, transformando o cenário e impactando um público mais amplo.
 
-Além disso, entendemos o impacto significativo do mercado de aplicativos móveis na vida das pessoas, democratizando o acesso à tecnologia e ampliando o público atingido.
+# Arquitetura de Código
+A arquitetura do frontend mobile segue o padrão do Next.js para aplicações web convencionais, organizada da seguinte maneira:
 
-## Arquitetura de Backend
+- **Components:** Esta pasta contém todos os componentes da aplicação, ou seja, os blocos que compõem as páginas.
+  
+- **Pages:** Aqui estão armazenadas todas as páginas compostas pelos componentes.
 
-A arquitetura do backend segue o padrão do MVC, dividindo a estrutura em três camadas: models, views e controllers. Essa abordagem visa a clareza do sistema e, principalmente, o aumento da escalabilidade. Cada bloco da arquitetura é responsável por uma funcionalidade específica.
+- **App.js:** Este arquivo renderiza todas as páginas na estrutura de uma aplicação web.
 
-- **Models:** Esta pasta abriga a camada de modelos da aplicação, responsável pela manipulação dos dados. Aqui, são gerenciados e interagem com os registros do banco de dados, que está hospedado no Supabase.
 
-- **Controllers:** Na pasta de controllers, encontramos a camada de controle da aplicação. Essa camada gerencia a comunicação entre as camadas, controlando as requisições do usuário e determinando quais terão impacto no banco de dados.
-
-- **Routes:** Esta pasta concentra a camada de rotas da aplicação, responsável por gerenciar a interação do usuário com o backend. Serve como a porta de entrada para os registros do banco de dados, manipulando as chamadas dos controllers por meio das requisições do usuário, onde o usuário, nesse contexto, refere-se ao frontend, diretamente responsável pela interação com o usuário final.
 
 
 <div style={{"margin": "0 auto", "max-width": "400px", "display": "flex", "justify-content": "space-around"}}>
 
 <div style={{"padding-right": "30px"}}>
 
-![Estrutura_Back](../../static/img/estrutura_back.png)
-
+![Home](../../static/img/arquitetura_front.png)
 </div>
 </div>
 
 
+Uma peculiaridade dessa arquitetura é sua semelhança com a lógica de desenvolvimento web convencional. No entanto, uma novidade para o grupo foi a estilização com CSS puro usando React. Para contornar isso, optamos por utilizar a biblioteca [Tailwind CSS](https://tailwindcss.com/docs/installation)
+ para estilizar por meio de classnames. Essa escolha foi feita para acelerar a curva de aprendizado, uma vez que alguns membros do grupo tinham mais familiaridade com essa tecnologia.
+
+Por fim, as bibliotecas para configuração dos passos posteriores:
+
+- [React Native](https://reactnative.dev): Framework javascript para desenvolvimento mobile baseaado no [React](https://react.dev);
+- [NativeWind](https://www.nativewind.dev): Framework css para desenvolvimento em react native baseado no [Tailwindcss](https://tailwindcss.com);
+- [Expo](https://expo.dev): Framework para desenvolvimento mobile que compila e permite a execução do projeto e, também, o seu deploy.
 
 
 
 
-# Nós no backend
+**Fluxo de Uso da Aplicação Web**
 
 A aplicação foi projetada com o intuito de proporcionar uma experiência simples e intuitiva, alinhada com as práticas comuns do mercado. Ao iniciar a aplicação em um dispositivo móvel, o usuário é recebido pela tela inicial, que oferece exclusivamente a opção de iniciar o fluxo. Vale ressaltar que, devido à natureza mobile do aplicativo, os usuários podem realizar multitarefas, como atender chamadas, enquanto utilizam o programa.
 
@@ -61,9 +67,15 @@ O design do aplicativo busca não apenas eficiência operacional, mas também ac
 
 Tela da aplicação em seu menu inicial:
 
+<div style={{"margin": "0 auto", "max-width": "400px", "display": "flex", "justify-content": "space-around"}}>
 
+<div style={{"padding-right": "30px"}}>
 
-### Comunicação com o Supabase
+![Home](../../static/img/tela-inicio.jpeg)
+</div>
+</div>
+
+### Interface do Chat
 
 A interface do chat é projetada para facilitar a comunicação entre o usuário e a aplicação, incorporando as seguintes funcionalidades:
 
@@ -71,6 +83,13 @@ A interface do chat é projetada para facilitar a comunicação entre o usuário
 
 2. **Áudio:** A funcionalidade de áudio, representada pelo ícone de microfone no canto inferior direito, permite ao usuário enviar mensagens de voz para o sistema integrado. Quando ativado, o microfone envia a gravação de áudio para um nó de reconhecimento de fala (STT), que converte a fala em texto. Esse texto é então submetido ao sistema de síntese de fala (TTS) e posteriormente ao Modelo de Linguagem de Aprendizado Profundo (LLM). Esse processo possibilita a interação por meio de comandos de voz.
 
+<div style={{"margin": "0 auto", "max-width": "400px", "display": "flex", "justify-content": "space-around"}}>
+
+<div style={{"padding-right": "30px"}}>
+
+![Chat_Page](../../static/img/tela-chat.jpeg)
+</div>
+</div>
 
 
 ### Interface de Integração com o SAP
@@ -84,6 +103,14 @@ Principais funcionalidades incorporadas:
 2. **Quantidade de Materiais Disponíveis no Estoque:** A funcionalidade de quantidade possibilita que o usuário visualize a quantidade de peças disponíveis no almoxarifado. Para aprimorar essa funcionalidade, está sendo considerada a implementação de notificações ao usuário quando uma peça adicionada ao carrinho não estiver disponível no estoque, garantindo uma experiência mais informativa e eficiente.
 
 
+<div style={{"margin": "0 auto", "max-width": "400px", "display": "flex", "justify-content": "space-around"}}>
+
+<div style={{"padding-right": "30px"}}>
+
+![SAP_Page](../../static/img/sap.jpeg)
+
+</div>
+</div>
 
 
 
@@ -96,9 +123,9 @@ Estamos planejando implementar recursos que promovam acessibilidade, como opçõ
 
 É importante salientar que a integração de todas as funcionalidades ao backend está em andamento, sendo desenvolvida de forma colaborativa. Questões relacionadas a essa integração serão abordadas em documentos futuros, à medida que avançamos no desenvolvimento do projeto.
 
-## Execução do Backend
+## Execução do Frontend
 
-Para executar o backend do projeto, são necessárias algumas dependências. Siga os passos abaixo para garantir a correta execução da aplicação:
+Para executar o frontend do projeto, são necessárias algumas dependências. Siga os passos abaixo para garantir a correta execução da aplicação:
 
 1. **Clone o repositório da aplicação do GitHub utilizando o seguinte comando:**
    ```
@@ -110,13 +137,22 @@ Para executar o backend do projeto, são necessárias algumas dependências. Sig
    ```
    npm i
    ```
-   Este comando instala todas as dependências relacionadas ao Node.js e seus frameworks.
+   Este comando instala todas as dependências relacionadas ao Node.js e seus frameworks, React Native que é o que nos interessa.
 
-3. **Agora que todas as dependências estão instaladas, é necessário executar o backend. Navegue até o diretório 'interface' e execute o seguinte comando:**
+3. **Agora que todas as dependências estão instaladas, é necessário executar o frontend. Navegue até o diretório 'frontend' contido em 'src' e execute o seguinte comando:**
    ```
-   node backend/app.js
+   npm expo start
    ```
 
-Após a execução deste comando, uma URL será exibida no terminal indicando que o backend está funcionando e pronto para cumprir seu papel.
+Após a execução deste comando, um QR code será exibido no terminal indicando que o frontend mobile está funcionando e pronto para cumprir seu papel. Escaneie o QR code, aceite todos os pedidos do app e aproveite o projeto.
 
-Link do backend no github: https://github.com/2023M8T2-Inteli/grupo6/tree/dev/src/interface/backend
+<div style={{"margin": "0 auto", "max-width": "400px", "display": "flex", "justify-content": "space-around"}}>
+
+<div style={{"padding-right": "30px"}}>
+
+![Execução](../../static/img/front_execution.png)
+
+</div>
+</div>
+
+Link do frotend no github: https://github.com/2023M8T2-Inteli/grupo6/tree/dev/src/frontend
