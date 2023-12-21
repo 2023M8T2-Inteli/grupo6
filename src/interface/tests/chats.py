@@ -1,6 +1,6 @@
 import requests
 
-base_url = 'http://localhost:3000'
+base_url = 'http://localhost:3004'
 chat_url = base_url + '/chat'
 
 def getChats(chat):
@@ -19,7 +19,7 @@ def postChats(chat, message, user):
     return data
 
 def main_post():
-    print(getChats())
+    print(getChats(0))
     chat = input('Enter chat: ')
     message = input('Enter message: ')
     user = input('Enter user: ')

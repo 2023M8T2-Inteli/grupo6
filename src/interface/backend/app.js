@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3004;
 const cookieParser = require('cookie-parser');
 
 const chatRouter = require('./routes/chatRouter');
