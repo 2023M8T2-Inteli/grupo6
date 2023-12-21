@@ -35,19 +35,26 @@ A arquitetura do backend segue o padrão do MVC, dividindo a estrutura em três 
 
 
 
+### Funções do Backend
+
+1. **rclnodejs:** É uma biblioteca que permite a interação entre o ROS2 e o Node.js. Ela é usada para integrar o backend do sistema com a funcionalidade do robô, permitindo que comandos e dados sejam transmitidos entre eles.
+
+2. **Integração com a API OpenAI:** Usamos a API da OpenAI (a mesma tecnologia por trás do ChatGPT) para dar ao chatbot a capacidade de entender e responder às solicitações dos operadores de forma inteligente.
+
+3. **Movimentação do Robô Autônomo:** O ROS2, com a ajuda do rclnodejs, comunica com o robô, instruindo-o sobre como navegar pelo almoxarifado e guiar os operadores até as peças desejadas.
 
 
 
-# Nós no backend
-
-A aplicação foi projetada com o intuito de proporcionar uma experiência simples e intuitiva, alinhada com as práticas comuns do mercado. Ao iniciar a aplicação em um dispositivo móvel, o usuário é recebido pela tela inicial, que oferece exclusivamente a opção de iniciar o fluxo. Vale ressaltar que, devido à natureza mobile do aplicativo, os usuários podem realizar multitarefas, como atender chamadas, enquanto utilizam o programa.
 
 ### Comunicação com o Supabase
+É uma base de dados que armazena todas as informações necessárias para o funcionamento do nosso projeto. O Supabase é integrado ao nosso backend, permitindo que o sistema acesse e manipule os dados conforme necessário.
 
+No projeto, ele fica responsável por:
 
+1. **Armazenar posições**: o banco armazena a posição e quantidade das peças.
 
+2. **Armazenar mensagens**: o banco armazena as mensagens trocadas entre o usuário e o chatbot.
 
-<------------------------foto----------------------->
 
 
 ### Logs do sistema
@@ -61,8 +68,8 @@ No contexto do projeto para o almoxarifado, o sistema de log pode registrar info
 
 
 
-<------------------------foto----------------------->
-
+### Aplicação no Projeto:
+O chatbot, alimentado pela API OpenAI, entende as solicitações dos operadores e comunica com o sistema do robô para guiá-los até a localização exata das peças no almoxarifado. Isso é feito de forma autônoma, otimizando o processo de busca e melhorando a eficiência geral.
 
 
 ## Execução do Backend
