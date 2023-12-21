@@ -3,7 +3,7 @@ import requests
 base_url = 'http://localhost:3000'
 components_url = base_url + '/components'
 
-def getComponents(component=None):
+def getComponents(component):
     response = requests.get(f'{components_url}/get/{component}')
     data = response.json()
     return data
@@ -28,17 +28,17 @@ def main_post():
     component = input('Enter component: ')
     description = input('Enter description: ')
     quantity = input('Enter quantity: ')
-    print(postComponents(component, description, quantity))
+    postComponents(component, description, quantity)
     print(getComponents(component))
 
 def main_update():
     component = input('Enter component to update: ')
     description = input('Enter description to update: ')
     quantity = input('Enter quantity to update: ')
-    print(updateComponents(component, description, quantity))
+    updateComponents(component, description, quantity)
     print(getComponents(component))
 
 
 if __name__ == '__main__':
-    #main_post()
+    main_post()
     main_update()

@@ -1,14 +1,30 @@
-const database = require('../../database/db');
+const database = require('../../database/db.chats');
 
 const getChat = async (req, res) => {
+    if (req.params) console.log(req.params);
+    const { chat } = req.params;
+
     try {
-        const chat = await req.body;
-        res.json(chat);
+        const response = await database.getChats(chat);
+        res.json(response);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+const postChat = async (req, res) => {
+    console.log(req.body);
+    const { chat, message, user } = req.body;
+
+    try {
+        const response = await database.postChats(chat, message, user);
+        res.json(response);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
 
 module.exports = {
-    getChat
+    getChat,
+    postChat
 };
