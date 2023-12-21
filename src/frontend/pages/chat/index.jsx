@@ -2,7 +2,7 @@ import axios from "axios";
 import { baseURL } from "../../api/baseURL";
 import { useEffect, useState } from "react";
 
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { InputSection } from "../../components/InputSection";
 import { TalkSection } from "../../components/TalkSection";
 import { OptionsSection } from "../../components/OptionsSection";
@@ -32,6 +32,7 @@ export function Chat() {
       console.error(err.message);
     }
   };
+
   useEffect(() => {
     fetchMessages();
   }, [change]);
@@ -41,7 +42,15 @@ export function Chat() {
       <View className="h-full mt-1 flex flex-col flex-nowrap justify-between">
         <TalkSection messages={messages} />
 
-        {!isLoading ? <OptionsSection /> : <Loading />}
+        {!isLoading ? (
+          <OptionsSection
+            lastMessage={
+              messages[0] ? messages[messages.length - 1].message : ""
+            }
+          />
+        ) : (
+          <Loading />
+        )}
 
         <InputSection change={makeChange} />
       </View>
