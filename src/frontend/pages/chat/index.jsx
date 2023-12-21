@@ -6,29 +6,10 @@ import { View, Text } from "react-native";
 import { InputSection } from "../../components/InputSection";
 import { TalkSection } from "../../components/TalkSection";
 import { OptionsSection } from "../../components/OptionsSection";
-
-const MESSAGES = [
-  {
-    user: "me",
-    message: "Hello there!",
-  },
-  {
-    user: "chat",
-    message: "Hello there! How may I assist you today?",
-  },
-  {
-    user: "me",
-    message: "What can you do?",
-  },
-  {
-    user: "chat",
-    message:
-      "As an AI language model, I can generate text for various purposes such as :\n  Writing articles, essays and reports on various topics.\n Generating product descriptions and reviews. ",
-  },
-];
+import { Loading } from "../../components/Loading";
 
 export function Chat() {
-  const [messages, setMessages] = useState(MESSAGES);
+  const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [change, makeChange] = useState(false);
 
@@ -52,7 +33,6 @@ export function Chat() {
     }
   };
   useEffect(() => {
-    console.log("Use effect agora");
     fetchMessages();
   }, [change]);
 
@@ -61,7 +41,7 @@ export function Chat() {
       <View className="h-full mt-1 flex flex-col flex-nowrap justify-between">
         <TalkSection messages={messages} />
 
-        {!isLoading ? <OptionsSection /> : <Text>Loading</Text>}
+        {!isLoading ? <OptionsSection /> : <Loading />}
 
         <InputSection change={makeChange} />
       </View>

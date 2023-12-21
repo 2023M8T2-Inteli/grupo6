@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+
 function Buttons() {
   return (
     <View className="shadow-lg bg-white shadow-slate-800 rounded-xl flex flex-row justify-evenly items-center p-1 gap-x-4 w-[50vw]">
@@ -10,10 +11,6 @@ function Buttons() {
       <Ionicons name="reload" size={30} color="#E9344E" />
     </View>
   );
-}
-
-function Loading() {
-  return <View></View>;
 }
 
 export function OptionsSection() {
