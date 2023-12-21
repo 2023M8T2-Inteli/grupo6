@@ -1,5 +1,3 @@
-// TODO: create node class
-//router.get('/', chatController.getChat);
 const rclnodejs = require('rclnodejs');
 
 class APINode {

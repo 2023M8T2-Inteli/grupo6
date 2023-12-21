@@ -59,7 +59,7 @@ O design do aplicativo busca não apenas eficiência operacional, mas também ac
 
 
 
-Tela da aplicação em seu menu inicial:
+<------------------------foto----------------------->
 
 
 
@@ -70,6 +70,10 @@ A interface do chat é projetada para facilitar a comunicação entre o usuário
 1. **Botões de Mensagem:** Na página de chat, o usuário pode interagir com o assistente virtual de diversas maneiras. Além de enviar mensagens, ele pode copiar o conteúdo das mensagens, marcar uma resposta como útil ou desfavorável e recarregar o chat para obter atualizações.
 
 2. **Áudio:** A funcionalidade de áudio, representada pelo ícone de microfone no canto inferior direito, permite ao usuário enviar mensagens de voz para o sistema integrado. Quando ativado, o microfone envia a gravação de áudio para um nó de reconhecimento de fala (STT), que converte a fala em texto. Esse texto é então submetido ao sistema de síntese de fala (TTS) e posteriormente ao Modelo de Linguagem de Aprendizado Profundo (LLM). Esse processo possibilita a interação por meio de comandos de voz.
+
+
+
+<------------------------foto----------------------->
 
 
 
@@ -86,8 +90,26 @@ Principais funcionalidades incorporadas:
 
 
 
+<------------------------foto----------------------->
 
-# Acessibilidade da aplicação
+
+### Logs do sistema
+O sistema de log funciona como um diário digital que registra todas as ações e eventos que ocorrem dentro de um sistema. Se algo inesperado ocorre, como um erro ou um problema, você pode olhar para trás, no log, e ver exatamente o que aconteceu e quando. Ao analisa-los, tamém podemos identificar padrões, como quais peças são mais solicitadas ou em que momentos o almoxarifado tem mais movimento. Essas informações são valiosas para melhorar a eficiência e eficácia do robô, já que ele mostra exatamente o que foi feito, sem alterações ou esquecimentos, garantindo transparência nas operações.
+
+No contexto do projeto para o almoxarifado, o sistema de log pode registrar informações como:
+
+1. **Quando um pedido foi feito:** A hora e a data em que um técnico solicitou uma peça.
+
+2. **Que peça foi solicitada:** Detalhes da peça que foi requisitada.
+
+
+
+<------------------------foto----------------------->
+
+
+
+
+### Acessibilidade da aplicação
 O design da interface destaca-se pela sua intuitividade e facilidade de uso, refletindo as cores e tipografia alinhadas à identidade visual do grupo Chauffeur, conforme apresentado em nossas demonstrações. A ênfase foi na adaptação para dispositivos móveis, proporcionando um fluxo de usuário descomplicado.
 
 Quanto à usabilidade e acessibilidade da interface, é importante ressaltar que, atualmente, nenhum recurso foi implementado, dado que a aplicação ainda está em fase de desenvolvimento. No entanto, nosso roadmap inclui um plano estruturado para aprimorar a assistência oferecida pela aplicação. Uma das mudanças prioritárias envolve a personalização da interface web, visando tornar a experiência do usuário mais flexível e inclusiva, abordando diferentes perspectivas.
@@ -95,6 +117,11 @@ Quanto à usabilidade e acessibilidade da interface, é importante ressaltar que
 Estamos planejando implementar recursos que promovam acessibilidade, como opções de áudio, integrações com serviços dedicados e a inclusão de atributos "alt" em todas as imagens para fornecer descrições, garantindo uma experiência rica mesmo em casos nos quais as imagens não são renderizadas.
 
 É importante salientar que a integração de todas as funcionalidades ao backend está em andamento, sendo desenvolvida de forma colaborativa. Questões relacionadas a essa integração serão abordadas em documentos futuros, à medida que avançamos no desenvolvimento do projeto.
+
+
+<------------------------foto----------------------->
+
+
 
 ## Execução do Backend
 
